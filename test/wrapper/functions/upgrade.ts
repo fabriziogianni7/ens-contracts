@@ -19,11 +19,11 @@ import {
 
 export const upgradeTests = () =>
   describe('upgrade()', () => {
-    describe('.eth', () => {
+    describe('.beam', () => {
       const label = 'wrapped2'
-      const name = `${label}.eth`
+      const name = `${label}.beam`
 
-      it('Upgrades a .eth name if sender is owner', async () => {
+      it('Upgrades a .beam name if sender is owner', async () => {
         const {
           nameWrapper,
           baseRegistrar,
@@ -66,7 +66,7 @@ export const upgradeTests = () =>
           )
       })
 
-      it('Upgrades a .eth name if sender is authorised by the owner', async () => {
+      it('Upgrades a .beam name if sender is authorised by the owner', async () => {
         const {
           nameWrapper,
           baseRegistrar,
@@ -181,9 +181,9 @@ export const upgradeTests = () =>
             dnsEncodeName(name),
             accounts[0].address,
             PARENT_CANNOT_CONTROL |
-              CANNOT_UNWRAP |
-              CANNOT_SET_RESOLVER |
-              IS_DOT_ETH,
+            CANNOT_UNWRAP |
+            CANNOT_SET_RESOLVER |
+            IS_DOT_ETH,
             expectedExpiry,
             zeroAddress,
             '0x00',
@@ -280,9 +280,9 @@ export const upgradeTests = () =>
             dnsEncodeName(name),
             accounts[0].address,
             PARENT_CANNOT_CONTROL |
-              CANNOT_UNWRAP |
-              CANNOT_SET_RESOLVER |
-              IS_DOT_ETH,
+            CANNOT_UNWRAP |
+            CANNOT_SET_RESOLVER |
+            IS_DOT_ETH,
             expectedExpiry,
             zeroAddress,
             '0x01',
@@ -314,7 +314,7 @@ export const upgradeTests = () =>
     describe('other', () => {
       const label = 'to-upgrade'
       const parentLabel = 'wrapped2'
-      const parentName = `${parentLabel}.eth`
+      const parentName = `${parentLabel}.beam`
       const name = `${label}.${parentName}`
 
       it('Allows owner to upgrade name', async () => {

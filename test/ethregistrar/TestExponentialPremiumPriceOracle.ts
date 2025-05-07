@@ -30,13 +30,13 @@ async function fixture() {
   const ensRegistry = await hre.viem.deployContract('ENSRegistry', [])
   const baseRegistrar = await hre.viem.deployContract(
     'BaseRegistrarImplementation',
-    [ensRegistry.address, namehash('eth')],
+    [ensRegistry.address, namehash('beam')],
   )
 
   await baseRegistrar.write.addController([accounts[0].address])
   await ensRegistry.write.setSubnodeOwner([
     zeroHash,
-    labelhash('eth'),
+    labelhash('beam'),
     baseRegistrar.address,
   ])
 
@@ -205,7 +205,7 @@ describe('ExponentialPremiumPriceOracle', () => {
   //   function exponentialReduceFloatingPoint(startPrice, days) {
   //     return startPrice * 0.5 ** days
   //   }
-  //   let ts = (await web3.eth.getBlock('latest')).timestamp - 90 * DAY
+  //   let ts = (await web3.beam.getBlock('latest')).timestamp - 90 * DAY
   //   let differencePercentSum = 0
   //   let percentMax = 0
 

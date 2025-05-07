@@ -37,7 +37,7 @@ async function fixture() {
 }
 
 const dummyCalldata = '0x12345678'
-const testName = 'test.eth' // DummyResolver name
+const testName = 'test.beam' // DummyResolver name
 const anotherAddress = '0x8000000000000000000000000000000000000001'
 const resolutions = makeResolutions({
   name: testName,

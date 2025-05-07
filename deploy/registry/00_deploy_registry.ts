@@ -14,7 +14,6 @@ const func: DeployFunction = async function (hre) {
     })
 
     const legacyRegistry = await viem.getContract('LegacyENSRegistry', owner)
-
     const setRootHash = await legacyRegistry.write.setOwner(
       [zeroHash, owner.address],
       {

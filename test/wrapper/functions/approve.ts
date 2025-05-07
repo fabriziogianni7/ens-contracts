@@ -18,7 +18,7 @@ export const approveTests = () => {
   describe('approve()', () => {
     const label = 'subdomain'
     const sublabel = 'sub'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
     const subname = `${sublabel}.${name}`
 
     async function approveFixture() {
@@ -347,7 +347,7 @@ export const approveTests = () => {
         .withArgs(namehash(name), getAddress(accounts[1].address))
     })
 
-    it('Approved address cannot unwrap .eth', async () => {
+    it('Approved address cannot unwrap .beam', async () => {
       const { nameWrapper, accounts } = await loadFixture(approveFixture)
 
       await nameWrapper.write.approve([accounts[1].address, toNameId(name)])
@@ -362,7 +362,7 @@ export const approveTests = () => {
         .withArgs(namehash(name), getAddress(accounts[1].address))
     })
 
-    it('Approved address cannot unwrap non .eth', async () => {
+    it('Approved address cannot unwrap non .beam', async () => {
       const { nameWrapper, accounts, actions } = await loadFixture(
         approveFixture,
       )

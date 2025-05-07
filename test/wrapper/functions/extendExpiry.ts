@@ -17,7 +17,7 @@ import {
 export const extendExpiryTests = () => {
   describe('extendExpiry()', () => {
     const label = 'fuses'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
     const sublabel = 'sub'
     const subname = `${sublabel}.${name}`
 
@@ -453,7 +453,7 @@ export const extendExpiryTests = () => {
         .withArgs(namehash(subname), getAddress(accounts[2].address))
     })
 
-    it('Does not allow owner of .eth 2LD to set expiry', async () => {
+    it('Does not allow owner of .beam 2LD to set expiry', async () => {
       const { nameWrapper, actions } = await loadFixture(fixture)
 
       await actions.registerSetupAndWrapName({
@@ -470,7 +470,7 @@ export const extendExpiryTests = () => {
       )
 
       await expect(nameWrapper)
-        .write('extendExpiry', [namehash('eth'), labelhash(label), expiry])
+        .write('extendExpiry', [namehash('beam'), labelhash(label), expiry])
         .toBeRevertedWithCustomError('OperationProhibited')
         .withArgs(namehash(name))
     })
@@ -688,7 +688,7 @@ export const extendExpiryTests = () => {
       expect(newExpiry).toEqual(parentExpiry - 1800n)
     })
 
-    it('Does not allow .eth 2LD owner to set expiry on child if the .eth 2LD is expired but grace period has not ended', async () => {
+    it('Does not allow .beam 2LD owner to set expiry on child if the .beam 2LD is expired but grace period has not ended', async () => {
       const { baseRegistrar, nameWrapper, testClient, actions, accounts } =
         await loadFixture(fixture)
 
@@ -729,7 +729,7 @@ export const extendExpiryTests = () => {
         .withArgs(namehash(subname), getAddress(accounts[0].address))
     })
 
-    it('Allows child owner to set expiry if parent .eth 2LD is expired but grace period has not ended', async () => {
+    it('Allows child owner to set expiry if parent .beam 2LD is expired but grace period has not ended', async () => {
       const { baseRegistrar, nameWrapper, testClient, actions, accounts } =
         await loadFixture(fixture)
 

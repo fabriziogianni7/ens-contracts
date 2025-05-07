@@ -28,7 +28,7 @@ async function fixture() {
   const ensRegistry = await hre.viem.deployContract('ENSRegistry', [])
   const baseRegistrar = await hre.viem.deployContract(
     'BaseRegistrarImplementation',
-    [ensRegistry.address, namehash('eth')],
+    [ensRegistry.address, namehash('beam')],
   )
   const reverseRegistrar = await hre.viem.deployContract('ReverseRegistrar', [
     ensRegistry.address,
@@ -53,7 +53,7 @@ async function fixture() {
 
   await ensRegistry.write.setSubnodeOwner([
     zeroHash,
-    labelhash('eth'),
+    labelhash('beam'),
     baseRegistrar.address,
   ])
 
@@ -193,7 +193,7 @@ describe('MigrationHelper', () => {
     const { nameWrapper, migrationHelper, ownerAccount, registrantAccount } =
       await loadFixture(fixture)
     const labels = ['test', 'test2']
-    const ids = labels.map((label) => hexToBigInt(namehash(label + '.eth')))
+    const ids = labels.map((label) => hexToBigInt(namehash(label + '.beam')))
     for (let label of labels) {
       await nameWrapper.write.registerAndWrapETH2LD([
         label,
@@ -227,7 +227,7 @@ describe('MigrationHelper', () => {
     const { nameWrapper, migrationHelper, registrantAccount } =
       await loadFixture(fixture)
     const labels = ['test', 'test2']
-    const ids = labels.map((label) => hexToBigInt(namehash(label + '.eth')))
+    const ids = labels.map((label) => hexToBigInt(namehash(label + '.beam')))
     for (let label of labels) {
       await nameWrapper.write.registerAndWrapETH2LD([
         label,
@@ -253,7 +253,7 @@ describe('MigrationHelper', () => {
     const { nameWrapper, migrationHelper, ownerAccount, registrantAccount } =
       await loadFixture(fixture)
     const labels = ['test', 'test2']
-    const ids = labels.map((label) => hexToBigInt(namehash(label + '.eth')))
+    const ids = labels.map((label) => hexToBigInt(namehash(label + '.beam')))
     for (let label of labels) {
       await nameWrapper.write.registerAndWrapETH2LD([
         label,

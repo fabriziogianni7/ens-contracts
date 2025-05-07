@@ -22,7 +22,7 @@ import "../../utils/BytesUtils.sol";
 ///          ENS1 <address or name of ExtendedDNSResolver> <record data>
 ///
 ///      For example:
-///          ENS1 2.dnsname.ens.eth a[60]=0x1234...
+///          ENS1 2.dnsname.ens.beam a[60]=0x1234...
 ///
 ///      The record data consists of a series of key=value pairs, separated by spaces. Keys
 ///      may have an optional argument in square brackets, and values may be either unquoted

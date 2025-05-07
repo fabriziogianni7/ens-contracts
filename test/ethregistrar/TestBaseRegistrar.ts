@@ -25,13 +25,13 @@ async function fixture() {
   const ensRegistry = await hre.viem.deployContract('ENSRegistry', [])
   const baseRegistrar = await hre.viem.deployContract(
     'BaseRegistrarImplementation',
-    [ensRegistry.address, namehash('eth')],
+    [ensRegistry.address, namehash('beam')],
   )
 
   await baseRegistrar.write.addController([accounts.controllerAccount.address])
   await ensRegistry.write.setSubnodeOwner([
     zeroHash,
-    labelhash('eth'),
+    labelhash('beam'),
     baseRegistrar.address,
   ])
 
@@ -69,7 +69,7 @@ describe('BaseRegistrar', () => {
     const block = await publicClient.getBlock({ blockHash: receipt.blockHash })
 
     await expect(
-      ensRegistry.read.owner([namehash('newname.eth')]),
+      ensRegistry.read.owner([namehash('newname.beam')]),
     ).resolves.toEqualAddress(registrantAccount.address)
     await expect(
       baseRegistrar.read.ownerOf([toLabelId('newname')]),
@@ -98,7 +98,7 @@ describe('BaseRegistrar', () => {
     const block = await publicClient.getBlock({ blockHash: receipt.blockHash })
 
     await expect(
-      ensRegistry.read.owner([namehash('silentname.eth')]),
+      ensRegistry.read.owner([namehash('silentname.beam')]),
     ).resolves.toEqualAddress(zeroAddress)
     await expect(
       baseRegistrar.read.ownerOf([toLabelId('silentname')]),
@@ -176,7 +176,7 @@ describe('BaseRegistrar', () => {
       fixtureWithRegistration,
     )
 
-    await ensRegistry.write.setOwner([namehash('newname.eth'), zeroAddress], {
+    await ensRegistry.write.setOwner([namehash('newname.beam'), zeroAddress], {
       account: registrantAccount,
     })
     await baseRegistrar.write.reclaim(
@@ -187,7 +187,7 @@ describe('BaseRegistrar', () => {
     )
 
     await expect(
-      ensRegistry.read.owner([namehash('newname.eth')]),
+      ensRegistry.read.owner([namehash('newname.beam')]),
     ).resolves.toEqualAddress(registrantAccount.address)
   })
 
@@ -195,7 +195,7 @@ describe('BaseRegistrar', () => {
     const { ensRegistry, baseRegistrar, registrantAccount, otherAccount } =
       await loadFixture(fixtureWithRegistration)
 
-    await ensRegistry.write.setOwner([namehash('newname.eth'), zeroAddress], {
+    await ensRegistry.write.setOwner([namehash('newname.beam'), zeroAddress], {
       account: registrantAccount,
     })
 
@@ -221,7 +221,7 @@ describe('BaseRegistrar', () => {
       baseRegistrar.read.ownerOf([toLabelId('newname')]),
     ).resolves.toEqualAddress(otherAccount.address)
     await expect(
-      ensRegistry.read.owner([namehash('newname.eth')]),
+      ensRegistry.read.owner([namehash('newname.beam')]),
     ).resolves.toEqualAddress(registrantAccount.address)
 
     await baseRegistrar.write.transferFrom(
@@ -324,7 +324,7 @@ describe('BaseRegistrar', () => {
     })
 
     await expect(
-      ensRegistry.read.resolver([namehash('eth')]),
+      ensRegistry.read.resolver([namehash('beam')]),
     ).resolves.toEqualAddress(controllerAccount.address)
   })
 })

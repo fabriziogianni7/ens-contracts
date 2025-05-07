@@ -179,7 +179,7 @@ export const wrapTests = () =>
         .withArgs(namehash(label), getAddress(accounts[0].address))
     })
 
-    it('Does not allow wrapping .eth 2LDs.', async () => {
+    it('Does not allow wrapping .beam 2LDs.', async () => {
       const { ensRegistry, nameWrapper, baseRegistrar, accounts, actions } =
         await loadFixture(fixture)
 
@@ -194,7 +194,7 @@ export const wrapTests = () =>
 
       await expect(nameWrapper)
         .write('wrap', [
-          dnsEncodeName(`${label}.eth`),
+          dnsEncodeName(`${label}.beam`),
           accounts[1].address,
           zeroAddress,
         ])
@@ -334,7 +334,7 @@ export const wrapTests = () =>
         await loadFixture(fixture)
 
       const label = 'test'
-      const name = `${label}.eth`
+      const name = `${label}.beam`
       const subLabel = 'sub'
       const subname = `${subLabel}.${name}`
 

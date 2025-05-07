@@ -23,7 +23,7 @@ import {
 export const setFusesTests = () => {
   describe('setFuses()', () => {
     const label = 'fuses'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
 
     it('cannot burn PARENT_CANNOT_CONTROL', async () => {
       const { nameWrapper, actions, accounts } = await loadFixture(fixture)
@@ -106,7 +106,7 @@ export const setFusesTests = () => {
       await expect(nameWrapper).transaction(tx).toBeRevertedWithoutReason()
     })
 
-    it('cannot burn fuses as the previous owner of a .eth when the name has expired', async () => {
+    it('cannot burn fuses as the previous owner of a .beam when the name has expired', async () => {
       const { nameWrapper, actions, accounts, testClient } = await loadFixture(
         fixture,
       )
@@ -174,7 +174,7 @@ export const setFusesTests = () => {
         .withArgs(namehash(`sub.${name}`))
     })
 
-    it('Will not allow burning fuses of .eth names unless CANNOT_UNWRAP is also burned.', async () => {
+    it('Will not allow burning fuses of .beam names unless CANNOT_UNWRAP is also burned.', async () => {
       const { nameWrapper, actions } = await loadFixture(fixture)
 
       await actions.registerSetupAndWrapName({
@@ -319,10 +319,10 @@ export const setFusesTests = () => {
       const [, fuses] = await nameWrapper.read.getData([toNameId(name)])
       expect(fuses).toEqual(
         CANNOT_UNWRAP |
-          PARENT_CANNOT_CONTROL |
-          IS_DOT_ETH |
-          64 |
-          CANNOT_TRANSFER,
+        PARENT_CANNOT_CONTROL |
+        IS_DOT_ETH |
+        64 |
+        CANNOT_TRANSFER,
       )
     })
 

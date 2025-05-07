@@ -15,7 +15,7 @@ import {
 export const isWrappedTests = () => {
   describe('isWrapped(bytes32 node)', () => {
     const label = 'something'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
 
     async function isWrappedFixture() {
       const initial = await loadFixture(fixture)
@@ -33,7 +33,7 @@ export const isWrappedTests = () => {
       return { ...initial, parentExpiry }
     }
 
-    it('identifies a wrapped .eth name', async () => {
+    it('identifies a wrapped .beam name', async () => {
       const { nameWrapper } = await loadFixture(isWrappedFixture)
 
       await expect(
@@ -41,7 +41,7 @@ export const isWrappedTests = () => {
       ).resolves.toBe(true)
     })
 
-    it('identifies an expired .eth name as unwrapped', async () => {
+    it('identifies an expired .beam name as unwrapped', async () => {
       const { nameWrapper, testClient } = await loadFixture(isWrappedFixture)
 
       await testClient.increaseTime({ seconds: Number(1n * DAY + 1n) })
@@ -52,7 +52,7 @@ export const isWrappedTests = () => {
       ).resolves.toBe(false)
     })
 
-    it('identifies an eth name registered on old controller as unwrapped', async () => {
+    it('identifies an beam name registered on old controller as unwrapped', async () => {
       const { baseRegistrar, nameWrapper, accounts } = await loadFixture(
         fixture,
       )
@@ -69,12 +69,12 @@ export const isWrappedTests = () => {
       ).resolves.toBe(false)
     })
 
-    it('identifies an unregistered .eth name as unwrapped', async () => {
+    it('identifies an unregistered .beam name as unwrapped', async () => {
       const { nameWrapper } = await loadFixture(isWrappedFixture)
 
       await expect(
         nameWrapper.read.isWrapped([
-          namehash('abcdefghijklmnop.eth'),
+          namehash('abcdefghijklmnop.beam'),
         ]) as Promise<boolean>,
       ).resolves.toBe(false)
     })
@@ -137,7 +137,7 @@ export const isWrappedTests = () => {
 
   describe('isWrapped(bytes32 parentNode, bytes32 labelhash)', () => {
     const label = 'something'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
     const sublabel = 'sub'
     const subname = `${sublabel}.${name}`
 
@@ -157,18 +157,18 @@ export const isWrappedTests = () => {
       return { ...initial, parentExpiry }
     }
 
-    it('identifies a wrapped .eth name', async () => {
+    it('identifies a wrapped .beam name', async () => {
       const { nameWrapper } = await loadFixture(isWrappedFixture)
 
       await expect(
         nameWrapper.read.isWrapped([
-          namehash('eth'),
+          namehash('beam'),
           labelhash(label),
         ]) as Promise<boolean>,
       ).resolves.toBe(true)
     })
 
-    it('identifies an expired .eth name as unwrapped', async () => {
+    it('identifies an expired .beam name as unwrapped', async () => {
       const { nameWrapper, testClient } = await loadFixture(isWrappedFixture)
 
       await testClient.increaseTime({ seconds: Number(1n * DAY + 1n) })
@@ -176,13 +176,13 @@ export const isWrappedTests = () => {
 
       await expect(
         nameWrapper.read.isWrapped([
-          namehash('eth'),
+          namehash('beam'),
           labelhash(label),
         ]) as Promise<boolean>,
       ).resolves.toBe(false)
     })
 
-    it('identifies an eth name registered on old controller as unwrapped', async () => {
+    it('identifies an beam name registered on old controller as unwrapped', async () => {
       const { baseRegistrar, nameWrapper, accounts } = await loadFixture(
         fixture,
       )
@@ -196,18 +196,18 @@ export const isWrappedTests = () => {
       await expectOwnerOf(label).on(baseRegistrar).toBe(accounts[0])
       await expect(
         nameWrapper.read.isWrapped([
-          namehash('eth'),
+          namehash('beam'),
           labelhash(label),
         ]) as Promise<boolean>,
       ).resolves.toBe(false)
     })
 
-    it('identifies an unregistered .eth name as unwrapped', async () => {
+    it('identifies an unregistered .beam name as unwrapped', async () => {
       const { nameWrapper } = await loadFixture(isWrappedFixture)
 
       await expect(
         nameWrapper.read.isWrapped([
-          namehash('eth'),
+          namehash('beam'),
           labelhash('abcdefghijklmnop'),
         ]) as Promise<boolean>,
       ).resolves.toBe(false)

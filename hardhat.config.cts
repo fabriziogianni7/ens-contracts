@@ -16,6 +16,11 @@ import('@ensdomains/hardhat-chai-matchers-viem')
 
 // hardhat actions
 import './tasks/esm_fix.cjs'
+import './tasks/seed.cts';
+import './tasks/resolve-name.cts';
+import './tasks/register-name.cts';
+
+
 
 // Load environment variables from .env file. Suppress warnings using silent
 // if this file is missing. dotenv will never modify any environment variables
@@ -69,7 +74,7 @@ const config = {
       accounts: real_accounts,
     },
     sepolia: {
-      url: `https://sepolia.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      url: `https://eth-sepolia.g.alchemy.com/v2/heVRQg3dhvxQNWSrDPEEjxFB2ntx14Kq`,
       tags: ['test', 'legacy', 'use_root'],
       chainId: 11155111,
       accounts: real_accounts,
@@ -84,6 +89,12 @@ const config = {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
       tags: ['legacy', 'use_root'],
       chainId: 1,
+      accounts: real_accounts,
+    },
+    beam_testnet: {
+      url: `https://build.onbeam.com/rpc/testnet`,
+      tags: ['legacy', 'use_root'],
+      chainId: 13337,
       accounts: real_accounts,
     },
   },
@@ -133,7 +144,7 @@ const config = {
       default: 0,
     },
     owner: {
-      default: 1,
+      default: 0,
       1: '0xFe89cc7aBB2C4183683ab71653C4cdc9B02D44b7',
     },
   },

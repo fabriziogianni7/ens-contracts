@@ -18,22 +18,22 @@ const func: DeployFunction = async function (hre) {
   const artifact = await deployments.getArtifact('IBulkRenewal')
   const interfaceId = createInterfaceId(artifact.abi)
 
-  const resolver = await registry.read.resolver([namehash('eth')])
+  const resolver = await registry.read.resolver([namehash('beam')])
   if (resolver === zeroAddress) {
     console.log(
-      `No resolver set for .eth; not setting interface ${interfaceId} for BulkRenewal`,
+      `No resolver set for .beam; not setting interface ${interfaceId} for BulkRenewal`,
     )
     return
   }
 
   const ethOwnedResolver = await viem.getContract('OwnedResolver')
   const setInterfaceHash = await ethOwnedResolver.write.setInterface([
-    namehash('eth'),
+    namehash('beam'),
     interfaceId,
     bulkRenewal.address as Address,
   ])
   console.log(
-    `Setting BulkRenewal interface ID ${interfaceId} on .eth resolver (tx: ${setInterfaceHash})...`,
+    `Setting BulkRenewal interface ID ${interfaceId} on .beam resolver (tx: ${setInterfaceHash})...`,
   )
   await viem.waitForTransactionSuccess(setInterfaceHash)
 

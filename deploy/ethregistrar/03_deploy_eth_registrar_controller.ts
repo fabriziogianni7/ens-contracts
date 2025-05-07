@@ -21,7 +21,7 @@ const func: DeployFunction = async function (hre) {
     registrar.address,
     priceOracle.address,
     60n,
-    86400n,
+    86400000n,
     reverseRegistrar.address,
     nameWrapper.address,
     registry.address,
@@ -60,22 +60,22 @@ const func: DeployFunction = async function (hre) {
   const artifact = await deployments.getArtifact('IETHRegistrarController')
   const interfaceId = createInterfaceId(artifact.abi)
 
-  const resolver = await registry.read.resolver([namehash('eth')])
+  const resolver = await registry.read.resolver([namehash('beam')])
   if (resolver === zeroAddress) {
     console.log(
-      `No resolver set for .eth; not setting interface ${interfaceId} for ETH Registrar Controller`,
+      `No resolver set for .beam; not setting interface ${interfaceId} for ETH Registrar Controller`,
     )
     return
   }
 
   const ethOwnedResolver = await viem.getContract('OwnedResolver')
   const setInterfaceHash = await ethOwnedResolver.write.setInterface([
-    namehash('eth'),
+    namehash('beam'),
     interfaceId,
     controller.address,
   ])
   console.log(
-    `Setting ETHRegistrarController interface ID ${interfaceId} on .eth resolver (tx: ${setInterfaceHash})...`,
+    `Setting ETHRegistrarController interface ID ${interfaceId} on .beam resolver (tx: ${setInterfaceHash})...`,
   )
   await viem.waitForTransactionSuccess(setInterfaceHash)
 }

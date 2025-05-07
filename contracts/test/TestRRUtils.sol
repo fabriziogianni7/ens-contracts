@@ -125,7 +125,7 @@ contract TestRRUtils {
 
         require(
             verylong1_eth.compareNames(verylong2_eth) > 0,
-            "longa.vlong.eth comes after long.vlong.eth"
+            "longa.vlong.beam comes after long.vlong.beam"
         );
     }
 

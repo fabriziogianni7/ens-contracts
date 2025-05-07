@@ -27,7 +27,7 @@ import {
 export const wrapETH2LDTests = () =>
   describe('wrapETH2LD()', () => {
     const label = 'wrapped2'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
 
     it('wraps a name if sender is owner', async () => {
       const { ensRegistry, baseRegistrar, nameWrapper, accounts, actions } =
@@ -61,7 +61,7 @@ export const wrapETH2LDTests = () =>
       await expectOwnerOf(label).on(baseRegistrar).toBe(nameWrapper)
     })
 
-    it('Cannot wrap a name if the owner has not authorised the wrapper with the .eth registrar.', async () => {
+    it('Cannot wrap a name if the owner has not authorised the wrapper with the .beam registrar.', async () => {
       const { nameWrapper, accounts, actions } = await loadFixture(fixture)
 
       await actions.register({
@@ -102,7 +102,7 @@ export const wrapETH2LDTests = () =>
       ).resolves.toEqualAddress(accounts[1].address)
     })
 
-    it('Can re-wrap a name that was wrapped has already expired on the .eth registrar', async () => {
+    it('Can re-wrap a name that was wrapped has already expired on the .beam registrar', async () => {
       const { baseRegistrar, nameWrapper, accounts, testClient, actions } =
         await loadFixture(fixture)
 
@@ -509,7 +509,7 @@ export const wrapETH2LDTests = () =>
         )
     })
 
-    it('Allows an account approved by the owner on the .eth registrar to wrap a name.', async () => {
+    it('Allows an account approved by the owner on the .beam registrar to wrap a name.', async () => {
       const { baseRegistrar, nameWrapper, accounts, actions } =
         await loadFixture(fixture)
 

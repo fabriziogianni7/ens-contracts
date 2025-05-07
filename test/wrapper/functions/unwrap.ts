@@ -56,7 +56,7 @@ export const unwrapTests = () =>
         await loadFixture(fixture)
 
       const parentLabel = 'unwrapped'
-      const parentName = `${parentLabel}.eth`
+      const parentName = `${parentLabel}.beam`
       const childLabel = 'sub'
       const childName = `${childLabel}.${parentName}`
 
@@ -236,7 +236,7 @@ export const unwrapTests = () =>
         .withArgs(namehash(label), getAddress(accounts[1].address))
     })
 
-    it('Will not unwrap .eth 2LDs.', async () => {
+    it('Will not unwrap .beam 2LDs.', async () => {
       const { nameWrapper, baseRegistrar, accounts, actions } =
         await loadFixture(fixture)
 
@@ -247,11 +247,11 @@ export const unwrapTests = () =>
         fuses: 0,
       })
 
-      await expectOwnerOf(`${label}.eth`).on(nameWrapper).toBe(accounts[0])
+      await expectOwnerOf(`${label}.beam`).on(nameWrapper).toBe(accounts[0])
 
       await expect(nameWrapper)
         .write('unwrap', [
-          namehash('eth'),
+          namehash('beam'),
           labelhash(label),
           accounts[0].address,
         ])
@@ -294,7 +294,7 @@ export const unwrapTests = () =>
       )
 
       const parentLabel = 'awesome'
-      const parentName = `${parentLabel}.eth`
+      const parentName = `${parentLabel}.beam`
       const childLabel = 'sub'
       const childName = `${childLabel}.${parentName}`
 
@@ -348,7 +348,7 @@ export const unwrapTests = () =>
       } = await loadFixture(fixture)
 
       const parentLabel = 'awesome'
-      const parentName = `${parentLabel}.eth`
+      const parentName = `${parentLabel}.beam`
       const childLabel = 'sub'
       const childName = `${childLabel}.${parentName}`
 
@@ -416,7 +416,7 @@ export const unwrapTests = () =>
         await loadFixture(fixture)
 
       const parentLabel = 'abc'
-      const parentName = `${parentLabel}.eth`
+      const parentName = `${parentLabel}.beam`
       const childLabel = 'sub'
       const childName = `${childLabel}.${parentName}`
 
@@ -462,7 +462,7 @@ export const unwrapTests = () =>
         await loadFixture(fixture)
 
       const parentLabel = 'test'
-      const parentName = `${parentLabel}.eth`
+      const parentName = `${parentLabel}.beam`
       const childLabel = 'sub'
       const childName = `${childLabel}.${parentName}`
 

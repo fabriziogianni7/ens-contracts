@@ -23,7 +23,7 @@ export const setSubnodeRecordTests = () =>
   describe('setSubnodeRecord()', () => {
     const label = 'subdomain2'
     const sublabel = 'sub'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
     const subname = `${sublabel}.${name}`
 
     async function setSubnodeRecordFixture() {
@@ -457,7 +457,7 @@ export const setSubnodeRecordTests = () =>
       )
       await nameWrapper.write.setApprovalForAll([testReentrancy.address, true])
 
-      // set self as sub.test.eth owner
+      // set self as sub.test.beam owner
       await actions.setSubnodeRecord.onNameWrapper({
         parentName: name,
         label: sublabel,

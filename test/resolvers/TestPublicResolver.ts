@@ -17,7 +17,7 @@ import {
 import { createInterfaceId } from '../fixtures/createInterfaceId.js'
 import { dnsEncodeName } from '../fixtures/dnsEncodeName.js'
 
-const targetNode = namehash('eth')
+const targetNode = namehash('beam')
 
 async function fixture() {
   const walletClients = await hre.viem.getWalletClients()
@@ -52,7 +52,7 @@ async function fixture() {
 
   await ensRegistry.write.setSubnodeOwner([
     zeroHash,
-    labelhash('eth'),
+    labelhash('beam'),
     accounts[0].address,
   ])
 
@@ -68,13 +68,13 @@ async function fixture() {
 
 async function fixtureWithDnsRecords() {
   const existing = await loadFixture(fixture)
-  // a.eth. 3600 IN A 1.2.3.4
+  // a.beam. 3600 IN A 1.2.3.4
   const arec = '016103657468000001000100000e10000401020304' as const
-  // b.eth. 3600 IN A 2.3.4.5
+  // b.beam. 3600 IN A 2.3.4.5
   const b1rec = '016203657468000001000100000e10000402030405' as const
-  // b.eth. 3600 IN A 3.4.5.6
+  // b.beam. 3600 IN A 3.4.5.6
   const b2rec = '016203657468000001000100000e10000403040506' as const
-  // eth. 86400 IN SOA ns1.ethdns.xyz. hostmaster.test.eth. 2018061501 15620 1800 1814400 14400
+  // beam. 86400 IN SOA ns1.ethdns.xyz. hostmaster.test.beam. 2018061501 15620 1800 1814400 14400
   const soarec =
     '03657468000006000100015180003a036e733106657468646e730378797a000a686f73746d6173746572057465737431036574680078492cbd00003d0400000708001baf8000003840' as const
   const rec = `0x${arec}${b1rec}${b2rec}${soarec}` as const
@@ -786,7 +786,7 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('a.eth.')),
+            keccak256(dnsEncodeName('a.beam.')),
             1,
           ]),
         ).resolves.toEqual(`0x${arec}`)
@@ -794,7 +794,7 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('b.eth.')),
+            keccak256(dnsEncodeName('b.beam.')),
             1,
           ]),
         ).resolves.toEqual(`0x${b1rec}${b2rec}`)
@@ -802,7 +802,7 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('eth.')),
+            keccak256(dnsEncodeName('beam.')),
             6,
           ]),
         ).resolves.toEqual(`0x${soarec}`)
@@ -811,9 +811,9 @@ describe('PublicResolver', () => {
       it('should update existing records', async () => {
         const { publicResolver } = await loadFixture(fixtureWithDnsRecords)
 
-        // a.eth. 3600 IN A 4.5.6.7
+        // a.beam. 3600 IN A 4.5.6.7
         const arec = '016103657468000001000100000e10000404050607' as const
-        // eth. 86400 IN SOA ns1.ethdns.xyz. hostmaster.test.eth. 2018061502 15620 1800 1814400 14400
+        // beam. 86400 IN SOA ns1.ethdns.xyz. hostmaster.test.beam. 2018061502 15620 1800 1814400 14400
         const soarec =
           '03657468000006000100015180003a036e733106657468646e730378797a000a686f73746d6173746572057465737431036574680078492cbe00003d0400000708001baf8000003840' as const
         const rec = `0x${arec}${soarec}` as const
@@ -823,14 +823,14 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('a.eth.')),
+            keccak256(dnsEncodeName('a.beam.')),
             1,
           ]),
         ).resolves.toEqual(`0x${arec}`)
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('eth.')),
+            keccak256(dnsEncodeName('beam.')),
             6,
           ]),
         ).resolves.toEqual(`0x${soarec}`)
@@ -839,7 +839,7 @@ describe('PublicResolver', () => {
       it('should keep track of entries', async () => {
         const { publicResolver } = await loadFixture(fixtureWithDnsRecords)
 
-        // c.eth. 3600 IN A 1.2.3.4
+        // c.beam. 3600 IN A 1.2.3.4
         const crec = '016303657468000001000100000e10000401020304' as const
         const rec = `0x${crec}` as const
 
@@ -849,13 +849,13 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.hasDNSRecords([
             targetNode,
-            keccak256(dnsEncodeName('c.eth.')),
+            keccak256(dnsEncodeName('c.beam.')),
           ]),
         ).resolves.toEqual(true)
         await expect(
           publicResolver.read.hasDNSRecords([
             targetNode,
-            keccak256(dnsEncodeName('d.eth.')),
+            keccak256(dnsEncodeName('d.beam.')),
           ]),
         ).resolves.toEqual(false)
 
@@ -864,11 +864,11 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.hasDNSRecords([
             targetNode,
-            keccak256(dnsEncodeName('c.eth.')),
+            keccak256(dnsEncodeName('c.beam.')),
           ]),
         ).resolves.toEqual(true)
 
-        // c.eth. 3600 IN A
+        // c.beam. 3600 IN A
         const crec2 = '016303657468000001000100000e100000' as const
         const rec2 = `0x${crec2}` as const
 
@@ -878,7 +878,7 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.hasDNSRecords([
             targetNode,
-            keccak256(dnsEncodeName('c.eth.')),
+            keccak256(dnsEncodeName('c.beam.')),
           ]),
         ).resolves.toEqual(false)
       })
@@ -886,7 +886,7 @@ describe('PublicResolver', () => {
       it('should handle single-record updates', async () => {
         const { publicResolver } = await loadFixture(fixtureWithDnsRecords)
 
-        // e.eth. 3600 IN A 1.2.3.4
+        // e.beam. 3600 IN A 1.2.3.4
         const erec = '016503657468000001000100000e10000401020304' as const
         const rec = `0x${erec}` as const
 
@@ -895,7 +895,7 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('e.eth.')),
+            keccak256(dnsEncodeName('e.beam.')),
             1,
           ]),
         ).resolves.toEqual(`0x${erec}`)
@@ -906,7 +906,7 @@ describe('PublicResolver', () => {
           fixtureWithDnsRecords,
         )
 
-        // f.eth. 3600 IN A 1.2.3.4
+        // f.beam. 3600 IN A 1.2.3.4
         const frec = '016603657468000001000100000e10000401020304' as const
         const rec = `0x${frec}` as const
 
@@ -925,21 +925,21 @@ describe('PublicResolver', () => {
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('a.eth.')),
+            keccak256(dnsEncodeName('a.beam.')),
             1,
           ]),
         ).resolves.toEqual('0x')
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('b.eth.')),
+            keccak256(dnsEncodeName('b.beam.')),
             1,
           ]),
         ).resolves.toEqual('0x')
         await expect(
           publicResolver.read.dnsRecord([
             targetNode,
-            keccak256(dnsEncodeName('eth.')),
+            keccak256(dnsEncodeName('beam.')),
             6,
           ]),
         ).resolves.toEqual('0x')

@@ -58,6 +58,7 @@ task('seed', 'Creates test subbdomains and wraps them with Namewrapper')
       registryAddress,
     )
 
+
     const BaseRegistrar = await hre.viem.getContractAt(
       'BaseRegistrarImplementation',
       registrarAddress,
@@ -73,7 +74,7 @@ task('seed', 'Creates test subbdomains and wraps them with Namewrapper')
       resolverAddress,
     )
 
-    const domain = `${name}.eth`
+    const domain = `${name}.beam`
     const namehashedname = namehash(domain)
 
     await BaseRegistrar.write.setApprovalForAll([NameWrapper.address, true])
@@ -97,7 +98,7 @@ task('seed', 'Creates test subbdomains and wraps them with Namewrapper')
     )
 
     await NameWrapper.write.setSubnodeOwner([
-      namehash(`${name}.eth`),
+      namehash(`${name}.beam`),
       'sub1',
       firstAddress,
       CAN_DO_EVERYTHING,
@@ -107,7 +108,7 @@ task('seed', 'Creates test subbdomains and wraps them with Namewrapper')
     console.log('NameWrapper setSubnodeOwner successful for sub1')
 
     await NameWrapper.write.setSubnodeOwner([
-      namehash(`${name}.eth`),
+      namehash(`${name}.beam`),
       'sub2',
       firstAddress,
       CAN_DO_EVERYTHING,
@@ -117,39 +118,39 @@ task('seed', 'Creates test subbdomains and wraps them with Namewrapper')
     console.log('NameWrapper setSubnodeOwner successful for sub2')
 
     await NameWrapper.write.setResolver([
-      namehash(`sub2.${name}.eth`),
+      namehash(`sub2.${name}.beam`),
       resolverAddress,
     ])
 
     console.log('NameWrapper setResolver successful for sub2')
 
     await Resolver.write.setText([
-      namehash(`sub2.${name}.eth`),
+      namehash(`sub2.${name}.beam`),
       'domains.ens.nft.image',
       '',
     ])
 
     await Resolver.write.setText([
-      namehash(`sub2.${name}.eth`),
+      namehash(`sub2.${name}.beam`),
       'avatar',
       'https://i.imgur.com/1JbxP0P.png',
     ])
 
     console.log(
-      `Wrapped NFT for sub2.${name}.eth is available at ${getOpenSeaUrl(
+      `Wrapped NFT for sub2.${name}.beam is available at ${getOpenSeaUrl(
         NameWrapper.address,
-        namehash(`sub2.${name}.eth`),
+        namehash(`sub2.${name}.beam`),
       )}`,
     )
 
-    await NameWrapper.write.setFuses([namehash(`${name}.eth`), CANNOT_UNWRAP], {
+    await NameWrapper.write.setFuses([namehash(`${name}.beam`), CANNOT_UNWRAP], {
       gas: 10000000n,
     })
 
     console.log('NameWrapper set CANNOT_UNWRAP fuse successful for sub2')
 
     await NameWrapper.write.setFuses(
-      [namehash(`sub2.${name}.eth`), CANNOT_UNWRAP],
+      [namehash(`sub2.${name}.beam`), CANNOT_UNWRAP],
       {
         gas: 10000000n,
       },
@@ -158,7 +159,7 @@ task('seed', 'Creates test subbdomains and wraps them with Namewrapper')
     console.log('NameWrapper set CANNOT_UNWRAP fuse successful for sub2')
 
     await NameWrapper.write.setFuses(
-      [namehash(`sub2.${name}.eth`), CANNOT_SET_RESOLVER],
+      [namehash(`sub2.${name}.beam`), CANNOT_SET_RESOLVER],
       {
         gas: 10000000n,
       },
@@ -167,7 +168,7 @@ task('seed', 'Creates test subbdomains and wraps them with Namewrapper')
     console.log('NameWrapper set CANNOT_SET_RESOLVER fuse successful for sub2')
 
     await NameWrapper.write.unwrap(
-      [namehash(`${name}.eth`), labelhash('sub1'), firstAddress],
+      [namehash(`${name}.beam`), labelhash('sub1'), firstAddress],
       {
         gas: 10000000n,
       },

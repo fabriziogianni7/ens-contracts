@@ -21,7 +21,7 @@ async function fixture() {
 async function fixtureWithEthSet() {
   const existing = await loadFixture(fixture)
   await existing.fifsRegistrar.write.register([
-    labelhash('eth'),
+    labelhash('beam'),
     existing.accounts[0].address,
   ])
   return existing
@@ -31,13 +31,13 @@ describe('FIFSRegistrar', () => {
   it('should allow registration of names', async () => {
     const { ensRegistry, fifsRegistrar, accounts } = await loadFixture(fixture)
 
-    await fifsRegistrar.write.register([labelhash('eth'), accounts[0].address])
+    await fifsRegistrar.write.register([labelhash('beam'), accounts[0].address])
 
     await expect(ensRegistry.read.owner([zeroHash])).resolves.toEqualAddress(
       fifsRegistrar.address,
     )
     await expect(
-      ensRegistry.read.owner([namehash('eth')]),
+      ensRegistry.read.owner([namehash('beam')]),
     ).resolves.toEqualAddress(accounts[0].address)
   })
 
@@ -48,12 +48,12 @@ describe('FIFSRegistrar', () => {
       )
 
       await fifsRegistrar.write.register([
-        labelhash('eth'),
+        labelhash('beam'),
         accounts[1].address,
       ])
 
       await expect(
-        ensRegistry.read.owner([namehash('eth')]),
+        ensRegistry.read.owner([namehash('beam')]),
       ).resolves.toEqualAddress(accounts[1].address)
     })
 
@@ -61,7 +61,7 @@ describe('FIFSRegistrar', () => {
       const { fifsRegistrar, accounts } = await loadFixture(fixtureWithEthSet)
 
       await expect(fifsRegistrar)
-        .write('register', [labelhash('eth'), accounts[1].address], {
+        .write('register', [labelhash('beam'), accounts[1].address], {
           account: accounts[1],
         })
         .toBeRevertedWithoutReason()

@@ -28,7 +28,7 @@ import {
 export const onERC721ReceivedTests = () => {
   describe('onERC721Received', () => {
     const label = 'send2contract'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
 
     const encodeExtraData = ({
       label,

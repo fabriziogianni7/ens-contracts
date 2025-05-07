@@ -23,7 +23,7 @@ import {
 export const setSubnodeOwnerTests = () =>
   describe('setSubnodeOwner()', () => {
     const label = 'ownerandwrap'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
     const sublabel = 'sub'
     const subname = `${sublabel}.${name}`
 
@@ -241,9 +241,9 @@ export const setSubnodeOwnerTests = () =>
           sublabel,
           accounts[0].address,
           CANNOT_UNWRAP |
-            PARENT_CANNOT_CONTROL |
-            CANNOT_SET_RESOLVER |
-            IS_DOT_ETH,
+          PARENT_CANNOT_CONTROL |
+          CANNOT_SET_RESOLVER |
+          IS_DOT_ETH,
           MAX_EXPIRY,
         ])
         .toBeRevertedWithCustomError('OperationProhibited')
@@ -447,7 +447,7 @@ export const setSubnodeOwnerTests = () =>
         [
           accounts[0].address,
           nameWrapper.address,
-          namehash('test.eth'),
+          namehash('test.beam'),
           labelhash('sub'),
         ],
       )

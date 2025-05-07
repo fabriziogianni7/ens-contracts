@@ -11,7 +11,7 @@ import {
 export const ownerOfTests = () => {
   describe('ownerOf()', () => {
     const label = 'subdomain'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
 
     it('Returns the owner', async () => {
       const { nameWrapper, accounts, actions } = await loadFixture(fixture)

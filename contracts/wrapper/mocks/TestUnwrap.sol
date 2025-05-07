@@ -6,8 +6,8 @@ import {NameCoder} from "../../utils/NameCoder.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract TestUnwrap is Ownable {
-    bytes32 private constant ETH_NODE =
-        0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae;
+    bytes32 private constant BEAM_NODE =
+        0xf12f2b0e3f6bb77c8bc21dd142030369e9bbc442b72f35a03b64c26957806e91;
 
     ENS public immutable ens;
     IBaseRegistrar public immutable registrar;
@@ -60,7 +60,7 @@ contract TestUnwrap is Ownable {
         bytes32 parentNode = NameCoder.namehash(name, offset);
         bytes32 node = _makeNode(parentNode, labelhash);
 
-        if (parentNode == ETH_NODE) {
+        if (parentNode == BEAM_NODE) {
             _unwrapETH2LD(labelhash, wrappedOwner, msg.sender);
         } else {
             _unwrapSubnode(node, wrappedOwner, msg.sender);

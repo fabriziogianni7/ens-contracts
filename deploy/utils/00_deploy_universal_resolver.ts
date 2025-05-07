@@ -7,7 +7,8 @@ const func: DeployFunction = async function (hre) {
   const batchGatewayURLs: string[] = JSON.parse(
     process.env.BATCH_GATEWAY_URLS || '[]',
   )
-
+  console.log("batchGatewayURLsssss", batchGatewayURLs)
+  batchGatewayURLs[0] = "https://gateway.example.com"
   if (batchGatewayURLs.length === 0) {
     throw new Error('UniversalResolver: No batch gateway URLs provided')
   }

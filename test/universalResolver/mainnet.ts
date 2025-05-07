@@ -8,7 +8,7 @@ export const ENS_REGISTRY: Address =
 export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   {
     title: 'PublicResolverV0',
-    name: 'jessesum.eth',
+    name: 'jessesum.beam',
     addresses: [
       {
         coinType: COIN_TYPE_ETH,
@@ -25,7 +25,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'PublicResolverV2',
-    name: 'nick.eth',
+    name: 'nick.beam',
     addresses: [
       {
         coinType: COIN_TYPE_ETH,
@@ -37,7 +37,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'PublicResolverV3',
-    name: 'vitalik.eth',
+    name: 'vitalik.beam',
     addresses: [
       {
         coinType: COIN_TYPE_ETH,
@@ -49,7 +49,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'TheOffchainResolver (onchain)',
-    name: 'raffy.eth',
+    name: 'raffy.beam',
     addresses: [
       {
         coinType: COIN_TYPE_ETH,
@@ -60,7 +60,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'TheOffchainResolver (offchain)',
-    name: 'raffy.eth',
+    name: 'raffy.beam',
     texts: [
       {
         key: 'location',
@@ -71,7 +71,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'TheOffchainResolver (hybrid)',
-    name: 'raffy.eth',
+    name: 'raffy.beam',
     addresses: [
       {
         coinType: COIN_TYPE_ETH,
@@ -89,7 +89,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'Coinbase',
-    name: 'raffy.base.eth',
+    name: 'raffy.base.beam',
     extended: true,
     texts: [
       { key: 'url', value: 'https://raffy.xyz' },
@@ -117,7 +117,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'Namestone',
-    name: 'slobo.eth',
+    name: 'slobo.beam',
     extended: true,
     addresses: [
       {
@@ -136,7 +136,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'Namespace',
-    name: 'thecap.gotbased.eth',
+    name: 'thecap.gotbased.beam',
     extended: true,
     addresses: [
       {
@@ -154,7 +154,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'ENSOffchainResolver',
-    name: '1.offchainexample.eth',
+    name: '1.offchainexample.beam',
     extended: true,
     addresses: [
       {
@@ -173,7 +173,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'Clave',
-    name: 'getclave.clv.eth',
+    name: 'getclave.clv.beam',
     extended: true,
     addresses: [
       {
@@ -185,7 +185,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'BNB',
-    name: 'cz.bnb.eth',
+    name: 'cz.bnb.beam',
     extended: true,
     addresses: [
       {
@@ -197,7 +197,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'Unruggable Gateway',
-    name: 'raffy.teamnick.eth',
+    name: 'raffy.teamnick.beam',
     extended: true,
     addresses: [
       {
@@ -216,7 +216,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'EVMGateway',
-    name: 'raffy.linea.eth',
+    name: 'raffy.linea.beam',
     extended: true,
     addresses: [
       {
@@ -228,7 +228,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'LineaNFTResolver',
-    name: '1.efrogs.eth',
+    name: '1.efrogs.beam',
     extended: true,
     addresses: [
       {
@@ -240,7 +240,7 @@ export const KNOWN_RESOLUTIONS: KnownProfile[] = [
   },
   {
     title: 'NFTResolver',
-    name: 'moo331.nft-owner.eth',
+    name: 'moo331.nft-owner.beam',
     extended: true,
     addresses: [
       {

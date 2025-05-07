@@ -11,7 +11,7 @@ import {
 export const setTTLTests = () =>
   describe('setTTL', () => {
     const label = 'setttl'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
 
     async function setTTLFixture() {
       const initial = await loadFixture(fixture)

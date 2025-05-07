@@ -19,12 +19,12 @@ const func: DeployFunction = async function (hre) {
   )
   await viem.waitForTransactionSuccess(setResolverHash)
 
-  const resolver = await registry.read.resolver([namehash('eth')])
-  console.log(`set resolver for .eth to ${resolver}`)
+  const resolver = await registry.read.resolver([namehash('beam')])
+  console.log(`set resolver for .beam to ${resolver}`)
   if (!ethOwnedResolver.newlyDeployed) return
 }
 
-func.id = 'eth-owned-resolver'
+func.id = 'beam-owned-resolver'
 func.tags = ['resolvers', 'OwnedResolver', 'EthOwnedResolver']
 func.dependencies = ['Registry']
 

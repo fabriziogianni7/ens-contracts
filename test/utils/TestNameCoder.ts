@@ -18,7 +18,7 @@ describe('NameCoder', () => {
       ['1x255', '1'.repeat(255)],
       ['1x300', '1'.repeat(300)],
       [`[${'1'.repeat(64)}]`],
-      ['mixed', `${'1'.repeat(300)}.[${'1'.repeat(64)}].eth`],
+      ['mixed', `${'1'.repeat(300)}.[${'1'.repeat(64)}].beam`],
     ]) {
       ens ??= title
       it(title, async () => {

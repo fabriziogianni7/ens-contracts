@@ -16,7 +16,7 @@ import {
 export const renewTests = () => {
   describe('renew', () => {
     const label = 'register'
-    const name = `${label}.eth`
+    const name = `${label}.beam`
 
     async function renewFixture() {
       const initial = await loadFixture(fixture)
@@ -109,9 +109,9 @@ export const renewTests = () => {
       // fuses remain the same
       expect(fusesAfter).toEqual(
         CANNOT_UNWRAP |
-          CANNOT_SET_RESOLVER |
-          IS_DOT_ETH |
-          PARENT_CANNOT_CONTROL,
+        CANNOT_SET_RESOLVER |
+        IS_DOT_ETH |
+        PARENT_CANNOT_CONTROL,
       )
       // still expired
       expect(expiryAfter).toBeLessThanOrEqual(timestamp + GRACE_PERIOD)

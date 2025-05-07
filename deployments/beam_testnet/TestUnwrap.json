@@ -1,0 +1,367 @@
+{
+  "address": "0x78c7bDf4eAc438F080Ef644684056A3d60e6c8a2",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract ENS",
+          "name": "_ens",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IBaseRegistrar",
+          "name": "_registrar",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "dns",
+          "type": "bytes"
+        }
+      ],
+      "name": "DNSDecodingFailed",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "approvedWrapper",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ens",
+      "outputs": [
+        {
+          "internalType": "contract ENS",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "registrar",
+      "outputs": [
+        {
+          "internalType": "contract IBaseRegistrar",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "parentNode",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "label",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "ttl",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint32",
+          "name": "fuses",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "expiry",
+          "type": "uint64"
+        }
+      ],
+      "name": "setSubnodeRecord",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "wrapper",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "approved",
+          "type": "bool"
+        }
+      ],
+      "name": "setWrapperApproval",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "label",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "wrappedOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "fuses",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "expiry",
+          "type": "uint64"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        }
+      ],
+      "name": "wrapETH2LD",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "name",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "wrappedOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint32",
+          "name": "fuses",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "expiry",
+          "type": "uint64"
+        },
+        {
+          "internalType": "address",
+          "name": "approved",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "extraData",
+          "type": "bytes"
+        }
+      ],
+      "name": "wrapFromUpgrade",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd408b65c3b93b3fceebb607c05d58af39730dd960a9a05a1d06efa4565f6bd0e",
+  "receipt": {
+    "to": null,
+    "from": "0x7f50CF0163B3a518d01fE480A51E7658d1eBeF87",
+    "contractAddress": "0x78c7bDf4eAc438F080Ef644684056A3d60e6c8a2",
+    "transactionIndex": 0,
+    "gasUsed": "1140442",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000000000000000000000000000000000000000000004000000000000000000200000001000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000200020000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x01a5b168b936fb69bf15bae10293a6f6ca632535f2dbcdbef759242a5f0b099c",
+    "transactionHash": "0xd408b65c3b93b3fceebb607c05d58af39730dd960a9a05a1d06efa4565f6bd0e",
+    "logs": [
+      {
+        "transactionIndex": 0,
+        "blockNumber": 1335008,
+        "transactionHash": "0xd408b65c3b93b3fceebb607c05d58af39730dd960a9a05a1d06efa4565f6bd0e",
+        "address": "0x78c7bDf4eAc438F080Ef644684056A3d60e6c8a2",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000007f50cf0163b3a518d01fe480a51e7658d1ebef87"
+        ],
+        "data": "0x",
+        "logIndex": 0,
+        "blockHash": "0x01a5b168b936fb69bf15bae10293a6f6ca632535f2dbcdbef759242a5f0b099c"
+      }
+    ],
+    "blockNumber": 1335008,
+    "cumulativeGasUsed": "1140442",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x688889c59EA2bc07ecA840b0D78a4aF042c83096",
+    "0x991a162B01bdCe23c243c982a3F53D77926e0c80"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "3465762b7e5dc6b6ead75cd5987d157e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract ENS\",\"name\":\"_ens\",\"type\":\"address\"},{\"internalType\":\"contract IBaseRegistrar\",\"name\":\"_registrar\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"dns\",\"type\":\"bytes\"}],\"name\":\"DNSDecodingFailed\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"approvedWrapper\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ens\",\"outputs\":[{\"internalType\":\"contract ENS\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registrar\",\"outputs\":[{\"internalType\":\"contract IBaseRegistrar\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"parentNode\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"label\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"resolver\",\"type\":\"address\"},{\"internalType\":\"uint64\",\"name\":\"ttl\",\"type\":\"uint64\"},{\"internalType\":\"uint32\",\"name\":\"fuses\",\"type\":\"uint32\"},{\"internalType\":\"uint64\",\"name\":\"expiry\",\"type\":\"uint64\"}],\"name\":\"setSubnodeRecord\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"wrapper\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setWrapperApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"label\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"wrappedOwner\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"fuses\",\"type\":\"uint32\"},{\"internalType\":\"uint64\",\"name\":\"expiry\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"resolver\",\"type\":\"address\"}],\"name\":\"wrapETH2LD\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"name\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"wrappedOwner\",\"type\":\"address\"},{\"internalType\":\"uint32\",\"name\":\"fuses\",\"type\":\"uint32\"},{\"internalType\":\"uint64\",\"name\":\"expiry\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"wrapFromUpgrade\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"errors\":{\"DNSDecodingFailed(bytes)\":[{\"details\":\"The DNS-encoded name is malformed.\"}]},\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/wrapper/mocks/TestUnwrap.sol\":\"TestUnwrap\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby disabling any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (token/ERC721/IERC721.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../../utils/introspection/IERC165.sol\\\";\\n\\n/**\\n * @dev Required interface of an ERC721 compliant contract.\\n */\\ninterface IERC721 is IERC165 {\\n    /**\\n     * @dev Emitted when `tokenId` token is transferred from `from` to `to`.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);\\n\\n    /**\\n     * @dev Emitted when `owner` enables `approved` to manage the `tokenId` token.\\n     */\\n    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);\\n\\n    /**\\n     * @dev Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets.\\n     */\\n    event ApprovalForAll(address indexed owner, address indexed operator, bool approved);\\n\\n    /**\\n     * @dev Returns the number of tokens in ``owner``'s account.\\n     */\\n    function balanceOf(address owner) external view returns (uint256 balance);\\n\\n    /**\\n     * @dev Returns the owner of the `tokenId` token.\\n     *\\n     * Requirements:\\n     *\\n     * - `tokenId` must exist.\\n     */\\n    function ownerOf(uint256 tokenId) external view returns (address owner);\\n\\n    /**\\n     * @dev Safely transfers `tokenId` token from `from` to `to`.\\n     *\\n     * Requirements:\\n     *\\n     * - `from` cannot be the zero address.\\n     * - `to` cannot be the zero address.\\n     * - `tokenId` token must exist and be owned by `from`.\\n     * - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}.\\n     * - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function safeTransferFrom(address from, address to, uint256 tokenId, bytes calldata data) external;\\n\\n    /**\\n     * @dev Safely transfers `tokenId` token from `from` to `to`, checking first that contract recipients\\n     * are aware of the ERC721 protocol to prevent tokens from being forever locked.\\n     *\\n     * Requirements:\\n     *\\n     * - `from` cannot be the zero address.\\n     * - `to` cannot be the zero address.\\n     * - `tokenId` token must exist and be owned by `from`.\\n     * - If the caller is not `from`, it must have been allowed to move this token by either {approve} or {setApprovalForAll}.\\n     * - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon a safe transfer.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function safeTransferFrom(address from, address to, uint256 tokenId) external;\\n\\n    /**\\n     * @dev Transfers `tokenId` token from `from` to `to`.\\n     *\\n     * WARNING: Note that the caller is responsible to confirm that the recipient is capable of receiving ERC721\\n     * or else they may be permanently lost. Usage of {safeTransferFrom} prevents loss, though the caller must\\n     * understand this adds an external call which potentially creates a reentrancy vulnerability.\\n     *\\n     * Requirements:\\n     *\\n     * - `from` cannot be the zero address.\\n     * - `to` cannot be the zero address.\\n     * - `tokenId` token must be owned by `from`.\\n     * - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(address from, address to, uint256 tokenId) external;\\n\\n    /**\\n     * @dev Gives permission to `to` to transfer `tokenId` token to another account.\\n     * The approval is cleared when the token is transferred.\\n     *\\n     * Only a single account can be approved at a time, so approving the zero address clears previous approvals.\\n     *\\n     * Requirements:\\n     *\\n     * - The caller must own the token or be an approved operator.\\n     * - `tokenId` must exist.\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address to, uint256 tokenId) external;\\n\\n    /**\\n     * @dev Approve or remove `operator` as an operator for the caller.\\n     * Operators can call {transferFrom} or {safeTransferFrom} for any token owned by the caller.\\n     *\\n     * Requirements:\\n     *\\n     * - The `operator` cannot be the caller.\\n     *\\n     * Emits an {ApprovalForAll} event.\\n     */\\n    function setApprovalForAll(address operator, bool approved) external;\\n\\n    /**\\n     * @dev Returns the account approved for `tokenId` token.\\n     *\\n     * Requirements:\\n     *\\n     * - `tokenId` must exist.\\n     */\\n    function getApproved(uint256 tokenId) external view returns (address operator);\\n\\n    /**\\n     * @dev Returns if the `operator` is allowed to manage all of the assets of `owner`.\\n     *\\n     * See {setApprovalForAll}\\n     */\\n    function isApprovedForAll(address owner, address operator) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x5bce51e11f7d194b79ea59fe00c9e8de9fa2c5530124960f29a24d4c740a3266\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.4) (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n\\n    function _contextSuffixLength() internal view virtual returns (uint256) {\\n        return 0;\\n    }\\n}\\n\",\"keccak256\":\"0xa92e4fa126feb6907daa0513ddd816b2eb91f30a808de54f63c17d0e162c3439\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/introspection/IERC165.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC165 standard, as defined in the\\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\\n *\\n * Implementers can declare support of contract interfaces, which can then be\\n * queried by others ({ERC165Checker}).\\n *\\n * For an implementation, see {ERC165}.\\n */\\ninterface IERC165 {\\n    /**\\n     * @dev Returns true if this contract implements the interface defined by\\n     * `interfaceId`. See the corresponding\\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\\n     * to learn more about how these ids are created.\\n     *\\n     * This function call must use less than 30 000 gas.\\n     */\\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\"},\"contracts/ethregistrar/IBaseRegistrar.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity ^0.8.4;\\n\\nimport \\\"../registry/ENS.sol\\\";\\nimport \\\"@openzeppelin/contracts/token/ERC721/IERC721.sol\\\";\\n\\ninterface IBaseRegistrar is IERC721 {\\n    event ControllerAdded(address indexed controller);\\n    event ControllerRemoved(address indexed controller);\\n    event NameMigrated(\\n        uint256 indexed id,\\n        address indexed owner,\\n        uint256 expires\\n    );\\n    event NameRegistered(\\n        uint256 indexed id,\\n        address indexed owner,\\n        uint256 expires\\n    );\\n    event NameRenewed(uint256 indexed id, uint256 expires);\\n\\n    // Authorises a controller, who can register and renew domains.\\n    function addController(address controller) external;\\n\\n    // Revoke controller permission for an address.\\n    function removeController(address controller) external;\\n\\n    // Set the resolver for the TLD this registrar manages.\\n    function setResolver(address resolver) external;\\n\\n    // Returns the expiration timestamp of the specified label hash.\\n    function nameExpires(uint256 id) external view returns (uint256);\\n\\n    // Returns true if the specified name is available for registration.\\n    function available(uint256 id) external view returns (bool);\\n\\n    /// @dev Register a name.\\n    function register(\\n        uint256 id,\\n        address owner,\\n        uint256 duration\\n    ) external returns (uint256);\\n\\n    function renew(uint256 id, uint256 duration) external returns (uint256);\\n\\n    /// @dev Reclaim ownership of a name in ENS, if you own it in the registrar.\\n    function reclaim(uint256 id, address owner) external;\\n}\\n\",\"keccak256\":\"0x984447817adfb8fc76447da9c24a492379bcfa4cd4e7ed8e795ea1981be3db83\",\"license\":\"MIT\"},\"contracts/registry/ENS.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity >=0.8.4;\\n\\ninterface ENS {\\n    // Logged when the owner of a node assigns a new owner to a subnode.\\n    event NewOwner(bytes32 indexed node, bytes32 indexed label, address owner);\\n\\n    // Logged when the owner of a node transfers ownership to a new account.\\n    event Transfer(bytes32 indexed node, address owner);\\n\\n    // Logged when the resolver for a node changes.\\n    event NewResolver(bytes32 indexed node, address resolver);\\n\\n    // Logged when the TTL of a node changes\\n    event NewTTL(bytes32 indexed node, uint64 ttl);\\n\\n    // Logged when an operator is added or removed.\\n    event ApprovalForAll(\\n        address indexed owner,\\n        address indexed operator,\\n        bool approved\\n    );\\n\\n    function setRecord(\\n        bytes32 node,\\n        address owner,\\n        address resolver,\\n        uint64 ttl\\n    ) external;\\n\\n    function setSubnodeRecord(\\n        bytes32 node,\\n        bytes32 label,\\n        address owner,\\n        address resolver,\\n        uint64 ttl\\n    ) external;\\n\\n    function setSubnodeOwner(\\n        bytes32 node,\\n        bytes32 label,\\n        address owner\\n    ) external returns (bytes32);\\n\\n    function setResolver(bytes32 node, address resolver) external;\\n\\n    function setOwner(bytes32 node, address owner) external;\\n\\n    function setTTL(bytes32 node, uint64 ttl) external;\\n\\n    function setApprovalForAll(address operator, bool approved) external;\\n\\n    function owner(bytes32 node) external view returns (address);\\n\\n    function resolver(bytes32 node) external view returns (address);\\n\\n    function ttl(bytes32 node) external view returns (uint64);\\n\\n    function recordExists(bytes32 node) external view returns (bool);\\n\\n    function isApprovedForAll(\\n        address owner,\\n        address operator\\n    ) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x8e208b44d5dbf22552fe72d79b45c640855b84fbc9ee21f4c3bb4bfe81cbe8db\",\"license\":\"MIT\"},\"contracts/utils/HexUtils.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.4;\\n\\nlibrary HexUtils {\\n    /// @dev Attempts to parse bytes32 from a hex string\\n    /// @param str The string to parse\\n    /// @param idx The offset to start parsing at\\n    /// @param lastIdx The (exclusive) last index in `str` to consider. Use `str.length` to scan the whole string.\\n    function hexStringToBytes32(\\n        bytes memory str,\\n        uint256 idx,\\n        uint256 lastIdx\\n    ) internal pure returns (bytes32, bool) {\\n        require(lastIdx - idx <= 64);\\n        (bytes memory r, bool valid) = hexToBytes(str, idx, lastIdx);\\n        if (!valid) {\\n            return (bytes32(0), false);\\n        }\\n        bytes32 ret;\\n        assembly {\\n            ret := shr(mul(4, sub(64, sub(lastIdx, idx))), mload(add(r, 32)))\\n        }\\n        return (ret, true);\\n    }\\n\\n    function hexToBytes(\\n        bytes memory str,\\n        uint256 idx,\\n        uint256 lastIdx\\n    ) internal pure returns (bytes memory r, bool valid) {\\n        uint256 hexLength = lastIdx - idx;\\n        if (hexLength % 2 == 1) {\\n            revert(\\\"Invalid string length\\\");\\n        }\\n        r = new bytes(hexLength / 2);\\n        valid = true;\\n        assembly {\\n            // check that the index to read to is not past the end of the string\\n            if gt(lastIdx, mload(str)) {\\n                revert(0, 0)\\n            }\\n\\n            function getHex(c) -> ascii {\\n                // chars 48-57: 0-9\\n                if and(gt(c, 47), lt(c, 58)) {\\n                    ascii := sub(c, 48)\\n                    leave\\n                }\\n                // chars 65-70: A-F\\n                if and(gt(c, 64), lt(c, 71)) {\\n                    ascii := add(sub(c, 65), 10)\\n                    leave\\n                }\\n                // chars 97-102: a-f\\n                if and(gt(c, 96), lt(c, 103)) {\\n                    ascii := add(sub(c, 97), 10)\\n                    leave\\n                }\\n                // invalid char\\n                ascii := 0xff\\n            }\\n\\n            let ptr := add(str, 32)\\n            for {\\n                let i := idx\\n            } lt(i, lastIdx) {\\n                i := add(i, 2)\\n            } {\\n                let byte1 := getHex(byte(0, mload(add(ptr, i))))\\n                let byte2 := getHex(byte(0, mload(add(ptr, add(i, 1)))))\\n                // if either byte is invalid, set invalid and break loop\\n                if or(eq(byte1, 0xff), eq(byte2, 0xff)) {\\n                    valid := false\\n                    break\\n                }\\n                let combined := or(shl(4, byte1), byte2)\\n                mstore8(add(add(r, 32), div(sub(i, idx), 2)), combined)\\n            }\\n        }\\n    }\\n\\n    /// @dev Attempts to parse an address from a hex string\\n    /// @param str The string to parse\\n    /// @param idx The offset to start parsing at\\n    /// @param lastIdx The (exclusive) last index in `str` to consider. Use `str.length` to scan the whole string.\\n    function hexToAddress(\\n        bytes memory str,\\n        uint256 idx,\\n        uint256 lastIdx\\n    ) internal pure returns (address, bool) {\\n        if (lastIdx - idx < 40) return (address(0x0), false);\\n        (bytes32 r, bool valid) = hexStringToBytes32(str, idx, lastIdx);\\n        return (address(uint160(uint256(r))), valid);\\n    }\\n\\n    /// @dev Format an address as a hex string.\\n    /// @param addr The address to format.\\n    /// @return hexString The corresponding hex string w/o a 0x-prefix.\\n    function addressToHex(\\n        address addr\\n    ) internal pure returns (string memory hexString) {\\n        // return bytesToHex(abi.encodePacked(addr));\\n        hexString = new string(40);\\n        uint256 dst;\\n        assembly {\\n            mstore(0, addr)\\n            dst := add(hexString, 32)\\n        }\\n        unsafeHex(12, dst, 40);\\n    }\\n\\n    /// @dev Format an integer as a variable-length hex string without zero padding.\\n    /// * unpaddedUintToHex(0, true)  = \\\"0\\\"\\n    /// * unpaddedUintToHex(1, true)  = \\\"1\\\"\\n    /// * unpaddedUintToHex(0, false) = \\\"00\\\"\\n    /// * unpaddedUintToHex(1, false) = \\\"01\\\"\\n    /// @param value The number to format.\\n    /// @param dropZeroNibble If true, the leading byte will use one nibble if less than 16.\\n    /// @return hexString The corresponding hex string w/o a 0x-prefix.\\n    function unpaddedUintToHex(\\n        uint256 value,\\n        bool dropZeroNibble\\n    ) internal pure returns (string memory hexString) {\\n        uint256 temp = value;\\n        uint256 shift;\\n        for (uint256 b = 128; b >= 8; b >>= 1) {\\n            if (temp < (1 << b)) {\\n                shift += b; // number of zero upper bits\\n            } else {\\n                temp >>= b; // shift away lower half\\n            }\\n        }\\n        if (dropZeroNibble && temp < 16) shift += 4;\\n        uint256 nibbles = 64 - (shift >> 2);\\n        hexString = new string(nibbles);\\n        uint256 dst;\\n        assembly {\\n            mstore(0, shl(shift, value)) // left-align\\n            dst := add(hexString, 32)\\n        }\\n        unsafeHex(0, dst, nibbles);\\n    }\\n\\n    /// @dev Format bytes as a hex string.\\n    /// @param v The bytes to format.\\n    /// @return hexString The corresponding hex string w/o a 0x-prefix.\\n    function bytesToHex(\\n        bytes memory v\\n    ) internal pure returns (string memory hexString) {\\n        uint256 nibbles = v.length << 1;\\n        hexString = new string(nibbles);\\n        uint256 src;\\n        uint256 dst;\\n        assembly {\\n            src := add(v, 32)\\n            dst := add(hexString, 32)\\n        }\\n        unsafeHex(src, dst, nibbles);\\n    }\\n\\n    /// @dev Converts arbitrary memory to a hex string.\\n    /// @param src The memory offset of first nibble of input.\\n    /// @param dst The memory offset of first hex-char of output.\\n    /// @param nibbles The number of nibbles to convert and the byte-length of the output.\\n    function unsafeHex(\\n        uint256 src,\\n        uint256 dst,\\n        uint256 nibbles\\n    ) internal pure {\\n        unchecked {\\n            for (uint256 end = dst + nibbles; dst < end; src += 32) {\\n                uint256 word;\\n                assembly {\\n                    word := mload(src)\\n                }\\n                for (uint256 shift = 256; dst < end && shift > 0; dst++) {\\n                    uint256 b = (word >> (shift -= 4)) & 15; // each nibble\\n                    b = b < 10 ? b + 0x30 : b + 0x57; // (\\\"a\\\" - 10) => 0x57\\n                    assembly {\\n                        mstore8(dst, b)\\n                    }\\n                }\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xdabfeb00a2bdc34233955d2a43ceead3bbbda6198e93889898028e31bea89d69\",\"license\":\"MIT\"},\"contracts/utils/NameCoder.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport {HexUtils} from \\\"../utils/HexUtils.sol\\\";\\n\\n/// @dev Library for encoding/decoding names.\\n///\\n/// An ENS name is stop-separated labels, eg. \\\"aaa.bb.c\\\".\\n///\\n/// A DNS-encoded name is composed of byte length-prefixed labels with a terminator byte.\\n/// eg. \\\"\\\\x03aaa\\\\x02bb\\\\x01c\\\\x00\\\".\\n/// - maximum label length is 255 bytes.\\n/// - length = 0 is reserved for the terminator (root).\\n///\\n/// To encode a label larger than 255 bytes, use a hashed label.\\n/// A label of any length can be converted to a hashed label.\\n///\\n/// A hashed label is encoded as \\\"[\\\" + toHex(keccak256(label)) + \\\"]\\\".\\n/// eg. [af2caa1c2ca1d027f1ac823b529d0a67cd144264b2789fa2ea4d63a67c7103cc] = \\\"vitalik\\\".\\n/// - always 66 bytes.\\n/// - matches: `/^\\\\[[0-9a-f]{64}\\\\]$/`.\\n///\\n/// w/o hashed labels: `dns.length == 2 + ens.length` and the mapping is injective.\\n///  w/ hashed labels: `dns.length == 2 + ens.split('.').map(x => x.utf8Length).sum(n => n > 255 ? 66 : n)`.\\nlibrary NameCoder {\\n    /// @dev The DNS-encoded name is malformed.\\n    error DNSDecodingFailed(bytes dns);\\n\\n    /// @dev A label of the ENS name has an invalid size.\\n    error DNSEncodingFailed(string ens);\\n\\n    /// @dev Same as `BytesUtils.readLabel()` but supports hashed labels.\\n    ///      Only the last labelHash is zero.\\n    ///      Disallows hashed label of zero (eg. `[0..0]`) to prevent confusion with terminator.\\n    ///      Reverts `DNSDecodingFailed`.\\n    /// @param name The DNS-encoded name.\\n    /// @param idx The offset into `name` to start reading.\\n    /// @return labelHash The resulting labelhash.\\n    /// @return newIdx The offset into `name` of the next label.\\n    function readLabel(\\n        bytes memory name,\\n        uint256 idx\\n    ) internal pure returns (bytes32 labelHash, uint256 newIdx) {\\n        if (idx >= name.length) revert DNSDecodingFailed(name); // \\\"readLabel: expected length\\\"\\n        uint256 len = uint256(uint8(name[idx++]));\\n        newIdx = idx + len;\\n        if (newIdx > name.length) revert DNSDecodingFailed(name); // \\\"readLabel: expected label\\\"\\n        if (len == 66 && name[idx] == \\\"[\\\" && name[newIdx - 1] == \\\"]\\\") {\\n            bool valid;\\n            (labelHash, valid) = HexUtils.hexStringToBytes32(\\n                name,\\n                idx + 1,\\n                newIdx - 1\\n            ); // will not revert\\n            if (!valid || labelHash == bytes32(0)) {\\n                revert DNSDecodingFailed(name); // \\\"readLabel: malformed\\\" or null literal\\n            }\\n        } else if (len > 0) {\\n            assembly {\\n                labelHash := keccak256(add(add(name, idx), 32), len)\\n            }\\n        }\\n    }\\n\\n    /// @dev Same as `BytesUtils.namehash()` but supports hashed labels.\\n    ///      Reverts `DNSDecodingFailed`.\\n    /// @param name The DNS-encoded name.\\n    /// @param idx The offset into name start hashing.\\n    /// @return hash The resulting namehash.\\n    function namehash(\\n        bytes memory name,\\n        uint256 idx\\n    ) internal pure returns (bytes32 hash) {\\n        (hash, idx) = readLabel(name, idx);\\n        if (hash == bytes32(0)) {\\n            if (idx != name.length) revert DNSDecodingFailed(name); // \\\"namehash: Junk at end of name\\\"\\n        } else {\\n            bytes32 parent = namehash(name, idx);\\n            assembly {\\n                mstore(0, parent)\\n                mstore(32, hash)\\n                hash := keccak256(0, 64)\\n            }\\n        }\\n    }\\n\\n    /// @dev Convert DNS-encoded name to ENS name.\\n    ///      Reverts `DNSDecodingFailed`.\\n    /// @param dns The DNS-encoded name to convert, eg. `\\\\x03aaa\\\\x02bb\\\\x01c\\\\x00`.\\n    /// @return ens The equivalent ENS name, eg. `aaa.bb.c`.\\n    function decode(\\n        bytes memory dns\\n    ) internal pure returns (string memory ens) {\\n        unchecked {\\n            uint256 n = dns.length;\\n            if (n == 1 && dns[0] == 0) return \\\"\\\"; // only valid answer is root\\n            if (n < 3) revert DNSDecodingFailed(dns);\\n            bytes memory v = new bytes(n - 2); // always 2-shorter\\n            uint256 src;\\n            uint256 dst;\\n            while (src < n) {\\n                uint8 len = uint8(dns[src++]);\\n                if (len == 0) break;\\n                uint256 end = src + len;\\n                if (end > dns.length) revert DNSDecodingFailed(dns); // overflow\\n                if (dst > 0) v[dst++] = \\\".\\\"; // skip first stop\\n                while (src < end) {\\n                    bytes1 x = dns[src++]; // read byte\\n                    if (x == \\\".\\\") revert DNSDecodingFailed(dns); // malicious label\\n                    v[dst++] = x; // write byte\\n                }\\n            }\\n            if (src != dns.length) revert DNSDecodingFailed(dns); // junk at end\\n            return string(v);\\n        }\\n    }\\n\\n    /// @dev Convert ENS name to DNS-encoded name.\\n    ///      Hashes labels longer than 255 bytes.\\n    ///      Reverts `DNSEncodingFailed`.\\n    /// @param ens The ENS name to convert, eg. `aaa.bb.c`.\\n    /// @return dns The corresponding DNS-encoded name, eg. `\\\\x03aaa\\\\x02bb\\\\x01c\\\\x00`.\\n    function encode(\\n        string memory ens\\n    ) internal pure returns (bytes memory dns) {\\n        unchecked {\\n            uint256 n = bytes(ens).length;\\n            if (n == 0) return hex\\\"00\\\"; // root\\n            dns = new bytes(n + 2);\\n            uint256 start;\\n            assembly {\\n                start := add(dns, 32) // first byte of output\\n            }\\n            uint256 end = start; // remember position to write length\\n            for (uint256 i; i < n; i++) {\\n                bytes1 x = bytes(ens)[i]; // read byte\\n                if (x == \\\".\\\") {\\n                    start = _createHashedLabel(start, end);\\n                    if (start == 0) revert DNSEncodingFailed(ens);\\n                    end = start; // jump to next position\\n                } else {\\n                    assembly {\\n                        end := add(end, 1) // increase length\\n                        mstore(end, x) // write byte\\n                    }\\n                }\\n            }\\n            start = _createHashedLabel(start, end);\\n            if (start == 0) revert DNSEncodingFailed(ens);\\n            assembly {\\n                mstore8(start, 0) // terminal byte\\n                mstore(dns, sub(start, add(dns, 31))) // truncate length\\n            }\\n        }\\n    }\\n\\n    /// @dev Write the label length.\\n    ///      If longer than 255, writes a hashed label instead.\\n    /// @param start The memory offset of the length-prefixed label.\\n    /// @param end The memory offset at the end of the label.\\n    /// @return next The memory offset for the next label.\\n    ///              Returns 0 if label is empty (handled by caller).\\n    function _createHashedLabel(\\n        uint256 start,\\n        uint256 end\\n    ) internal pure returns (uint256 next) {\\n        uint256 size = end - start; // length of label\\n        if (size > 255) {\\n            assembly {\\n                mstore(0, keccak256(add(start, 1), size)) // compute hash of label\\n            }\\n            HexUtils.unsafeHex(0, start + 2, 64); // override label with hex(hash)\\n            assembly {\\n                mstore8(add(start, 1), 0x5B) // \\\"[\\\"\\n                mstore8(add(start, 66), 0x5D) // \\\"]\\\"\\n            }\\n            size = 66;\\n        }\\n        if (size > 0) {\\n            assembly {\\n                mstore8(start, size) // update length\\n            }\\n            next = start + 1 + size; // advance\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x8fd7af9cec38612e8041c13d4c3eb9c11fccdcbed4fac40020a4b84672f0aa85\",\"license\":\"MIT\"},\"contracts/wrapper/mocks/TestUnwrap.sol\":{\"content\":\"//SPDX-License-Identifier: MIT\\npragma solidity ^0.8.4;\\nimport \\\"../../registry/ENS.sol\\\";\\nimport \\\"../../ethregistrar/IBaseRegistrar.sol\\\";\\nimport {NameCoder} from \\\"../../utils/NameCoder.sol\\\";\\nimport {Ownable} from \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\n\\ncontract TestUnwrap is Ownable {\\n    bytes32 private constant BEAM_NODE =\\n        0xf12f2b0e3f6bb77c8bc21dd142030369e9bbc442b72f35a03b64c26957806e91;\\n\\n    ENS public immutable ens;\\n    IBaseRegistrar public immutable registrar;\\n    mapping(address => bool) public approvedWrapper;\\n\\n    constructor(ENS _ens, IBaseRegistrar _registrar) {\\n        ens = _ens;\\n        registrar = _registrar;\\n    }\\n\\n    function setWrapperApproval(\\n        address wrapper,\\n        bool approved\\n    ) public onlyOwner {\\n        approvedWrapper[wrapper] = approved;\\n    }\\n\\n    function wrapETH2LD(\\n        string calldata label,\\n        address wrappedOwner,\\n        uint32 fuses,\\n        uint64 expiry,\\n        address resolver\\n    ) public {\\n        _unwrapETH2LD(keccak256(bytes(label)), wrappedOwner, msg.sender);\\n    }\\n\\n    function setSubnodeRecord(\\n        bytes32 parentNode,\\n        string memory label,\\n        address newOwner,\\n        address resolver,\\n        uint64 ttl,\\n        uint32 fuses,\\n        uint64 expiry\\n    ) public {\\n        bytes32 node = _makeNode(parentNode, keccak256(bytes(label)));\\n        _unwrapSubnode(node, newOwner, msg.sender);\\n    }\\n\\n    function wrapFromUpgrade(\\n        bytes calldata name,\\n        address wrappedOwner,\\n        uint32 fuses,\\n        uint64 expiry,\\n        address approved,\\n        bytes calldata extraData\\n    ) public {\\n        (bytes32 labelhash, uint256 offset) = NameCoder.readLabel(name, 0);\\n        bytes32 parentNode = NameCoder.namehash(name, offset);\\n        bytes32 node = _makeNode(parentNode, labelhash);\\n\\n        if (parentNode == BEAM_NODE) {\\n            _unwrapETH2LD(labelhash, wrappedOwner, msg.sender);\\n        } else {\\n            _unwrapSubnode(node, wrappedOwner, msg.sender);\\n        }\\n    }\\n\\n    function _unwrapETH2LD(\\n        bytes32 labelhash,\\n        address wrappedOwner,\\n        address sender\\n    ) private {\\n        uint256 tokenId = uint256(labelhash);\\n        address registrant = registrar.ownerOf(tokenId);\\n\\n        require(\\n            approvedWrapper[sender] &&\\n                sender == registrant &&\\n                registrar.isApprovedForAll(registrant, address(this)),\\n            \\\"Unauthorised\\\"\\n        );\\n\\n        registrar.reclaim(tokenId, wrappedOwner);\\n        registrar.transferFrom(registrant, wrappedOwner, tokenId);\\n    }\\n\\n    function _unwrapSubnode(\\n        bytes32 node,\\n        address newOwner,\\n        address sender\\n    ) private {\\n        address owner = ens.owner(node);\\n\\n        require(\\n            approvedWrapper[sender] &&\\n                owner == sender &&\\n                ens.isApprovedForAll(owner, address(this)),\\n            \\\"Unauthorised\\\"\\n        );\\n\\n        ens.setOwner(node, newOwner);\\n    }\\n\\n    function _makeNode(\\n        bytes32 node,\\n        bytes32 labelhash\\n    ) private pure returns (bytes32) {\\n        return keccak256(abi.encodePacked(node, labelhash));\\n    }\\n}\\n\",\"keccak256\":\"0x15866de6eadeabdc4fd65e6b42be2b2ba622c6af4cd4c43f0140b5a3e71f06c3\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60c060405234801561001057600080fd5b506040516200148e3803806200148e833981016040819052610031916100b9565b61003a33610051565b6001600160a01b039182166080521660a0526100f3565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6001600160a01b03811681146100b657600080fd5b50565b600080604083850312156100cc57600080fd5b82516100d7816100a1565b60208401519092506100e8816100a1565b809150509250929050565b60805160a051611345620001496000396000818160f00152818161099d01528181610a7801528181610b6e0152610c0f015260008181610134015281816104af0152818161058a015261068001526113456000f3fe608060405234801561001057600080fd5b50600436106100be5760003560e01c80638da5cb5b11610076578063c6d6d7c11161005b578063c6d6d7c114610182578063f2fde38b146101b5578063f9547a9e146101c857600080fd5b80638da5cb5b1461015e5780639198c2761461016f57600080fd5b80632b20e397116100a75780632b20e397146100eb5780633f15457f1461012f578063715018a61461015657600080fd5b80630cc17365146100c357806324c1af44146100d8575b600080fd5b6100d66100d1366004610e93565b6101db565b005b6100d66100e6366004610f0e565b61020e565b6101127f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b0390911681526020015b60405180910390f35b6101127f000000000000000000000000000000000000000000000000000000000000000081565b6100d6610238565b6000546001600160a01b0316610112565b6100d661017d366004611065565b61024c565b6101a5610190366004611120565b60016020526000908152604090205460ff1681565b6040519015158152602001610126565b6100d66101c3366004611120565b610335565b6100d66101d6366004611144565b6103ca565b6101e36103f4565b6001600160a01b03919091166000908152600160205260409020805460ff1916911515919091179055565b600061022188888051906020012061044e565b905061022e81873361047d565b5050505050505050565b6102406103f4565b61024a60006106d8565b565b60008061028e8a8a8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201829052509250610740915050565b9150915060006102d58b8b8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525086925061090a915050565b905060006102e3828561044e565b90507f0ed0d4f1c0944883743de22ebdfcfc9616443bbd48d0ca5fc49b3d96a87f916f820161031c57610317848b33610969565b610327565b610327818b3361047d565b505050505050505050505050565b61033d6103f4565b6001600160a01b0381166103be5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f646472657373000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b6103c7816106d8565b50565b6103ec86866040516103dd9291906111ce565b60405180910390208533610969565b505050505050565b6000546001600160a01b0316331461024a5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064016103b5565b604080516020808201859052818301849052825180830384018152606090920190925280519101205b92915050565b6040517f02571be3000000000000000000000000000000000000000000000000000000008152600481018490526000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316906302571be390602401602060405180830381865afa1580156104fe573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061052291906111de565b6001600160a01b03831660009081526001602052604090205490915060ff16801561055e5750816001600160a01b0316816001600160a01b0316145b80156105f5575060405163e985e9c560e01b81526001600160a01b0382811660048301523060248301527f0000000000000000000000000000000000000000000000000000000000000000169063e985e9c590604401602060405180830381865afa1580156105d1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105f591906111fb565b6106415760405162461bcd60e51b815260206004820152600c60248201527f556e617574686f7269736564000000000000000000000000000000000000000060448201526064016103b5565b6040517f5b0fc9c3000000000000000000000000000000000000000000000000000000008152600481018590526001600160a01b0384811660248301527f00000000000000000000000000000000000000000000000000000000000000001690635b0fc9c390604401600060405180830381600087803b1580156106c457600080fd5b505af115801561022e573d6000803e3d6000fd5b600080546001600160a01b038381167fffffffffffffffffffffffff0000000000000000000000000000000000000000831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b60008083518310610766578360405163ba4adc2360e01b81526004016103b59190611218565b600084846107738161127c565b95508151811061078557610785611295565b016020015160f81c905061079981856112ab565b915084518211156107bf578460405163ba4adc2360e01b81526004016103b59190611218565b80604214801561082757508484815181106107dc576107dc611295565b6020910101517fff00000000000000000000000000000000000000000000000000000000000000167f5b00000000000000000000000000000000000000000000000000000000000000145b801561089557508461083a6001846112be565b8151811061084a5761084a611295565b6020910101517fff00000000000000000000000000000000000000000000000000000000000000167f5d00000000000000000000000000000000000000000000000000000000000000145b156108f15760006108bb866108ab8760016112ab565b6108b66001876112be565b610c74565b90945090508015806108cb575083155b156108eb578560405163ba4adc2360e01b81526004016103b59190611218565b50610902565b801561090257806020858701012092505b509250929050565b60006109168383610740565b92509050806109475782518214610942578260405163ba4adc2360e01b81526004016103b59190611218565b610477565b6000610953848461090a565b6000908152602092909252506040902092915050565b6040517f6352211e0000000000000000000000000000000000000000000000000000000081526004810184905283906000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031690636352211e90602401602060405180830381865afa1580156109ec573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a1091906111de565b6001600160a01b03841660009081526001602052604090205490915060ff168015610a4c5750806001600160a01b0316836001600160a01b0316145b8015610ae3575060405163e985e9c560e01b81526001600160a01b0382811660048301523060248301527f0000000000000000000000000000000000000000000000000000000000000000169063e985e9c590604401602060405180830381865afa158015610abf573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ae391906111fb565b610b2f5760405162461bcd60e51b815260206004820152600c60248201527f556e617574686f7269736564000000000000000000000000000000000000000060448201526064016103b5565b6040517f28ed4f6c000000000000000000000000000000000000000000000000000000008152600481018390526001600160a01b0385811660248301527f000000000000000000000000000000000000000000000000000000000000000016906328ed4f6c90604401600060405180830381600087803b158015610bb257600080fd5b505af1158015610bc6573d6000803e3d6000fd5b50506040517f23b872dd0000000000000000000000000000000000000000000000000000000081526001600160a01b0384811660048301528781166024830152604482018690527f00000000000000000000000000000000000000000000000000000000000000001692506323b872dd9150606401600060405180830381600087803b158015610c5557600080fd5b505af1158015610c69573d6000803e3d6000fd5b505050505050505050565b6000806040610c8385856112be565b1115610c8e57600080fd5b600080610c9c878787610cd2565b9150915080610cb4575060009250829150610cca9050565b50602001516004858503604003021c9150600190505b935093915050565b6060600080610ce185856112be565b9050610cee6002826112e7565b600103610d3d5760405162461bcd60e51b815260206004820152601560248201527f496e76616c696420737472696e67206c656e677468000000000000000000000060448201526064016103b5565b610d486002826112fb565b67ffffffffffffffff811115610d6057610d60610ecc565b6040519080825280601f01601f191660200182016040528015610d8a576020820181803683370190505b509250600191508551841115610d9f57600080fd5b610df0565b6000603a8210602f83111615610dbc5750602f190190565b60478210604083111615610dd257506036190190565b60678210606083111615610de857506056190190565b5060ff919050565b60208601855b85811015610e5557610e0d8183015160001a610da4565b610e1f6001830184015160001a610da4565b60ff811460ff83141715610e3857600095505050610e55565b60049190911b178060028984030487016020015350600201610df6565b505050935093915050565b6001600160a01b03811681146103c757600080fd5b8035610e8081610e60565b919050565b80151581146103c757600080fd5b60008060408385031215610ea657600080fd5b8235610eb181610e60565b91506020830135610ec181610e85565b809150509250929050565b634e487b7160e01b600052604160045260246000fd5b803567ffffffffffffffff81168114610e8057600080fd5b803563ffffffff81168114610e8057600080fd5b600080600080600080600060e0888a031215610f2957600080fd5b87359650602088013567ffffffffffffffff80821115610f4857600080fd5b818a0191508a601f830112610f5c57600080fd5b813581811115610f6e57610f6e610ecc565b604051601f8201601f19908116603f01168101908382118183101715610f9657610f96610ecc565b816040528281528d6020848701011115610faf57600080fd5b82602086016020830137600060208483010152809a505050505050610fd660408901610e75565b9450610fe460608901610e75565b9350610ff260808901610ee2565b925061100060a08901610efa565b915061100e60c08901610ee2565b905092959891949750929550565b60008083601f84011261102e57600080fd5b50813567ffffffffffffffff81111561104657600080fd5b60208301915083602082850101111561105e57600080fd5b9250929050565b60008060008060008060008060c0898b03121561108157600080fd5b883567ffffffffffffffff8082111561109957600080fd5b6110a58c838d0161101c565b909a50985060208b013591506110ba82610e60565b8197506110c960408c01610efa565b96506110d760608c01610ee2565b955060808b013591506110e982610e60565b90935060a08a013590808211156110ff57600080fd5b5061110c8b828c0161101c565b999c989b5096995094979396929594505050565b60006020828403121561113257600080fd5b813561113d81610e60565b9392505050565b60008060008060008060a0878903121561115d57600080fd5b863567ffffffffffffffff81111561117457600080fd5b61118089828a0161101c565b909750955050602087013561119481610e60565b93506111a260408801610efa565b92506111b060608801610ee2565b915060808701356111c081610e60565b809150509295509295509295565b8183823760009101908152919050565b6000602082840312156111f057600080fd5b815161113d81610e60565b60006020828403121561120d57600080fd5b815161113d81610e85565b600060208083528351808285015260005b8181101561124557858101830151858201604001528201611229565b506000604082860101526040601f19601f8301168501019250505092915050565b634e487b7160e01b600052601160045260246000fd5b60006001820161128e5761128e611266565b5060010190565b634e487b7160e01b600052603260045260246000fd5b8082018082111561047757610477611266565b8181038181111561047757610477611266565b634e487b7160e01b600052601260045260246000fd5b6000826112f6576112f66112d1565b500690565b60008261130a5761130a6112d1565b50049056fea26469706673582212207744d0904f75fda2be6013c1a7e00d39a17392b0df071b383dd8a40d6447ddfe64736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100be5760003560e01c80638da5cb5b11610076578063c6d6d7c11161005b578063c6d6d7c114610182578063f2fde38b146101b5578063f9547a9e146101c857600080fd5b80638da5cb5b1461015e5780639198c2761461016f57600080fd5b80632b20e397116100a75780632b20e397146100eb5780633f15457f1461012f578063715018a61461015657600080fd5b80630cc17365146100c357806324c1af44146100d8575b600080fd5b6100d66100d1366004610e93565b6101db565b005b6100d66100e6366004610f0e565b61020e565b6101127f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b0390911681526020015b60405180910390f35b6101127f000000000000000000000000000000000000000000000000000000000000000081565b6100d6610238565b6000546001600160a01b0316610112565b6100d661017d366004611065565b61024c565b6101a5610190366004611120565b60016020526000908152604090205460ff1681565b6040519015158152602001610126565b6100d66101c3366004611120565b610335565b6100d66101d6366004611144565b6103ca565b6101e36103f4565b6001600160a01b03919091166000908152600160205260409020805460ff1916911515919091179055565b600061022188888051906020012061044e565b905061022e81873361047d565b5050505050505050565b6102406103f4565b61024a60006106d8565b565b60008061028e8a8a8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201829052509250610740915050565b9150915060006102d58b8b8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525086925061090a915050565b905060006102e3828561044e565b90507f0ed0d4f1c0944883743de22ebdfcfc9616443bbd48d0ca5fc49b3d96a87f916f820161031c57610317848b33610969565b610327565b610327818b3361047d565b505050505050505050505050565b61033d6103f4565b6001600160a01b0381166103be5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201527f646472657373000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b6103c7816106d8565b50565b6103ec86866040516103dd9291906111ce565b60405180910390208533610969565b505050505050565b6000546001600160a01b0316331461024a5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064016103b5565b604080516020808201859052818301849052825180830384018152606090920190925280519101205b92915050565b6040517f02571be3000000000000000000000000000000000000000000000000000000008152600481018490526000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316906302571be390602401602060405180830381865afa1580156104fe573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061052291906111de565b6001600160a01b03831660009081526001602052604090205490915060ff16801561055e5750816001600160a01b0316816001600160a01b0316145b80156105f5575060405163e985e9c560e01b81526001600160a01b0382811660048301523060248301527f0000000000000000000000000000000000000000000000000000000000000000169063e985e9c590604401602060405180830381865afa1580156105d1573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105f591906111fb565b6106415760405162461bcd60e51b815260206004820152600c60248201527f556e617574686f7269736564000000000000000000000000000000000000000060448201526064016103b5565b6040517f5b0fc9c3000000000000000000000000000000000000000000000000000000008152600481018590526001600160a01b0384811660248301527f00000000000000000000000000000000000000000000000000000000000000001690635b0fc9c390604401600060405180830381600087803b1580156106c457600080fd5b505af115801561022e573d6000803e3d6000fd5b600080546001600160a01b038381167fffffffffffffffffffffffff0000000000000000000000000000000000000000831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b60008083518310610766578360405163ba4adc2360e01b81526004016103b59190611218565b600084846107738161127c565b95508151811061078557610785611295565b016020015160f81c905061079981856112ab565b915084518211156107bf578460405163ba4adc2360e01b81526004016103b59190611218565b80604214801561082757508484815181106107dc576107dc611295565b6020910101517fff00000000000000000000000000000000000000000000000000000000000000167f5b00000000000000000000000000000000000000000000000000000000000000145b801561089557508461083a6001846112be565b8151811061084a5761084a611295565b6020910101517fff00000000000000000000000000000000000000000000000000000000000000167f5d00000000000000000000000000000000000000000000000000000000000000145b156108f15760006108bb866108ab8760016112ab565b6108b66001876112be565b610c74565b90945090508015806108cb575083155b156108eb578560405163ba4adc2360e01b81526004016103b59190611218565b50610902565b801561090257806020858701012092505b509250929050565b60006109168383610740565b92509050806109475782518214610942578260405163ba4adc2360e01b81526004016103b59190611218565b610477565b6000610953848461090a565b6000908152602092909252506040902092915050565b6040517f6352211e0000000000000000000000000000000000000000000000000000000081526004810184905283906000907f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031690636352211e90602401602060405180830381865afa1580156109ec573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a1091906111de565b6001600160a01b03841660009081526001602052604090205490915060ff168015610a4c5750806001600160a01b0316836001600160a01b0316145b8015610ae3575060405163e985e9c560e01b81526001600160a01b0382811660048301523060248301527f0000000000000000000000000000000000000000000000000000000000000000169063e985e9c590604401602060405180830381865afa158015610abf573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610ae391906111fb565b610b2f5760405162461bcd60e51b815260206004820152600c60248201527f556e617574686f7269736564000000000000000000000000000000000000000060448201526064016103b5565b6040517f28ed4f6c000000000000000000000000000000000000000000000000000000008152600481018390526001600160a01b0385811660248301527f000000000000000000000000000000000000000000000000000000000000000016906328ed4f6c90604401600060405180830381600087803b158015610bb257600080fd5b505af1158015610bc6573d6000803e3d6000fd5b50506040517f23b872dd0000000000000000000000000000000000000000000000000000000081526001600160a01b0384811660048301528781166024830152604482018690527f00000000000000000000000000000000000000000000000000000000000000001692506323b872dd9150606401600060405180830381600087803b158015610c5557600080fd5b505af1158015610c69573d6000803e3d6000fd5b505050505050505050565b6000806040610c8385856112be565b1115610c8e57600080fd5b600080610c9c878787610cd2565b9150915080610cb4575060009250829150610cca9050565b50602001516004858503604003021c9150600190505b935093915050565b6060600080610ce185856112be565b9050610cee6002826112e7565b600103610d3d5760405162461bcd60e51b815260206004820152601560248201527f496e76616c696420737472696e67206c656e677468000000000000000000000060448201526064016103b5565b610d486002826112fb565b67ffffffffffffffff811115610d6057610d60610ecc565b6040519080825280601f01601f191660200182016040528015610d8a576020820181803683370190505b509250600191508551841115610d9f57600080fd5b610df0565b6000603a8210602f83111615610dbc5750602f190190565b60478210604083111615610dd257506036190190565b60678210606083111615610de857506056190190565b5060ff919050565b60208601855b85811015610e5557610e0d8183015160001a610da4565b610e1f6001830184015160001a610da4565b60ff811460ff83141715610e3857600095505050610e55565b60049190911b178060028984030487016020015350600201610df6565b505050935093915050565b6001600160a01b03811681146103c757600080fd5b8035610e8081610e60565b919050565b80151581146103c757600080fd5b60008060408385031215610ea657600080fd5b8235610eb181610e60565b91506020830135610ec181610e85565b809150509250929050565b634e487b7160e01b600052604160045260246000fd5b803567ffffffffffffffff81168114610e8057600080fd5b803563ffffffff81168114610e8057600080fd5b600080600080600080600060e0888a031215610f2957600080fd5b87359650602088013567ffffffffffffffff80821115610f4857600080fd5b818a0191508a601f830112610f5c57600080fd5b813581811115610f6e57610f6e610ecc565b604051601f8201601f19908116603f01168101908382118183101715610f9657610f96610ecc565b816040528281528d6020848701011115610faf57600080fd5b82602086016020830137600060208483010152809a505050505050610fd660408901610e75565b9450610fe460608901610e75565b9350610ff260808901610ee2565b925061100060a08901610efa565b915061100e60c08901610ee2565b905092959891949750929550565b60008083601f84011261102e57600080fd5b50813567ffffffffffffffff81111561104657600080fd5b60208301915083602082850101111561105e57600080fd5b9250929050565b60008060008060008060008060c0898b03121561108157600080fd5b883567ffffffffffffffff8082111561109957600080fd5b6110a58c838d0161101c565b909a50985060208b013591506110ba82610e60565b8197506110c960408c01610efa565b96506110d760608c01610ee2565b955060808b013591506110e982610e60565b90935060a08a013590808211156110ff57600080fd5b5061110c8b828c0161101c565b999c989b5096995094979396929594505050565b60006020828403121561113257600080fd5b813561113d81610e60565b9392505050565b60008060008060008060a0878903121561115d57600080fd5b863567ffffffffffffffff81111561117457600080fd5b61118089828a0161101c565b909750955050602087013561119481610e60565b93506111a260408801610efa565b92506111b060608801610ee2565b915060808701356111c081610e60565b809150509295509295509295565b8183823760009101908152919050565b6000602082840312156111f057600080fd5b815161113d81610e60565b60006020828403121561120d57600080fd5b815161113d81610e85565b600060208083528351808285015260005b8181101561124557858101830151858201604001528201611229565b506000604082860101526040601f19601f8301168501019250505092915050565b634e487b7160e01b600052601160045260246000fd5b60006001820161128e5761128e611266565b5060010190565b634e487b7160e01b600052603260045260246000fd5b8082018082111561047757610477611266565b8181038181111561047757610477611266565b634e487b7160e01b600052601260045260246000fd5b6000826112f6576112f66112d1565b500690565b60008261130a5761130a6112d1565b50049056fea26469706673582212207744d0904f75fda2be6013c1a7e00d39a17392b0df071b383dd8a40d6447ddfe64736f6c63430008110033",
+  "devdoc": {
+    "errors": {
+      "DNSDecodingFailed(bytes)": [
+        {
+          "details": "The DNS-encoded name is malformed."
+        }
+      ]
+    },
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 444,
+        "contract": "contracts/wrapper/mocks/TestUnwrap.sol:TestUnwrap",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 29993,
+        "contract": "contracts/wrapper/mocks/TestUnwrap.sol:TestUnwrap",
+        "label": "approvedWrapper",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_bool)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      }
+    }
+  }
+}

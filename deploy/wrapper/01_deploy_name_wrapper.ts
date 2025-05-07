@@ -15,7 +15,8 @@ const func: DeployFunction = async function (hre) {
     registry.address,
     registrar.address,
     metadata.address,
-  ])
+  ], { gas: 25000000n })
+  console.log("SSS")
   if (!nameWrapperDeployment.newlyDeployed) return
 
   const nameWrapper = await viem.getContract('NameWrapper')
@@ -40,22 +41,22 @@ const func: DeployFunction = async function (hre) {
   await viem.waitForTransactionSuccess(addControllerHash)
 
   const interfaceId = await getInterfaceId('INameWrapper')
-  const resolver = await registry.read.resolver([namehash('eth')])
+  const resolver = await registry.read.resolver([namehash('beam')])
   if (resolver === zeroAddress) {
     console.log(
-      `No resolver set for .eth; not setting interface ${interfaceId} for NameWrapper`,
+      `No resolver set for .beam; not setting interface ${interfaceId} for NameWrapper`,
     )
     return
   }
 
   const resolverContract = await viem.getContractAt('OwnedResolver', resolver)
   const setInterfaceHash = await resolverContract.write.setInterface([
-    namehash('eth'),
+    namehash('beam'),
     interfaceId,
     nameWrapper.address,
   ])
   console.log(
-    `Setting NameWrapper interface ID ${interfaceId} on .eth resolver (tx: ${setInterfaceHash})...`,
+    `Setting NameWrapper interface ID ${interfaceId} on .beam resolver (tx: ${setInterfaceHash})...`,
   )
   await viem.waitForTransactionSuccess(setInterfaceHash)
 }

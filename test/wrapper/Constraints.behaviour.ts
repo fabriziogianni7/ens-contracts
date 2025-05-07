@@ -33,9 +33,9 @@ const MAX_EXPIRY = 2n ** 64n - 1n
 const parentLabel = 'test1'
 const parentLabelHash = labelhash(parentLabel)
 const parentLabelId = toTokenId(parentLabelHash)
-const parentNode = namehash('test1.eth')
+const parentNode = namehash('test1.beam')
 const parentNodeId = toTokenId(parentNode)
-const childNode = namehash('sub.test1.eth')
+const childNode = namehash('sub.test1.beam')
 const childNodeId = toTokenId(childNode)
 const childLabel = 'sub'
 const childLabelHash = labelhash(childLabel)
@@ -1292,7 +1292,7 @@ export const shouldRespectConstraints = () => {
       })
       await nameWrapper.write.wrap(
         [
-          dnsEncodeName(`${childLabel}.${parentLabel}.eth`),
+          dnsEncodeName(`${childLabel}.${parentLabel}.beam`),
           accounts[1].address,
           zeroAddress,
         ],
